@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Dong Hyuck Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "개발할땐.. 애를 쓰지만 자연스럽고, 열정적인지만 무리없이...(미생)"
+  bio              : "애를 쓰지만 자연스럽고, \n 열정적인지만 무리없이...(미생)"
   location         : "Somewhere"
   email            :
   links:
