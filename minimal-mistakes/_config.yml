@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "dong Hyuck blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
+name                     : "Dong Hyuck Kim"
 description              : "An amazing website."
 url                      : "https://hiddenevent.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
