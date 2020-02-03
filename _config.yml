@@ -107,9 +107,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Dong Hyuck Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "개발할땐.. 애를 쓰지만 자연스럽고, 열정적인지만 무리없이...(미생)"
   location         : "Somewhere"
   email            :
   links:
