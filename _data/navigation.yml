@@ -6,14 +6,12 @@ main:
     url: /tags/
   - title: "Category"
     url: /categories/
-  - title: "Content"
-    children:
-      - title: "Database"
-      url: "/database/"
-      - title: "Web"
-      url: /Web/
+  - title: "Database"
+    url: "/database/"
+  - title: "Web"
+    url: /Web/
   - title: "Quick-Start Guide"
-   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
