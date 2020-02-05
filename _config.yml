@@ -25,9 +25,9 @@ url                      : "https://hiddenevent.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "hiddenevent/hiddenevent.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-# breadcrumbs            : false # true, false (default)
+logo                     : "/assets/img/HiddenEvent-logo-white.png"
+masthead_title           : "Developer Balancing Method"
+breadcrumbs              : true # true, false (default)  현재 보고 있는 포스트의 위치가 어딘지 알려줌...
 words_per_minute         : 200
 comments:
   provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
@@ -110,7 +110,7 @@ author:
   name             : "Dong Hyuck Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "애를 쓰지만 자연스럽고, \n 열정적인지만 무리없이...(미생)"
-  location         : "Somewhere"
+  location         : "Somewhere, Korean"
   email            :
   links:
     - label: "Email"
@@ -253,12 +253,12 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
-category_archive:
+language-archive:
   type: liquid
-  path: /categories/
-tag_archive:
+  path: /language-archive/
+tags-archive:
   type: liquid
-  path: /tags/
+  path: /tags-archive/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -279,6 +279,21 @@ compress_html:
   ignore:
     envs: development
 
+#Collections
+collections_dir: all_collections
+collections:
+#  notes:
+#    output: true
+#    permalink: /:collection/:path/
+  kotlin:
+    output: true
+    permalink: /language-archive/:collection/:title
+  java:
+    output: true
+    permalink: /language-archive/:collection/:title
+  tips:
+    output: true
+    permalink: /language-archive/:collection/:title
 
 # Defaults
 defaults:
@@ -288,8 +303,66 @@ defaults:
       type: posts
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
       share: true
       related: true
+  #>>>>>>>>>>>>>>>>>>> 여기서부터 추가 됨
+  # _pages 부분입니다.
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+
+  # _notes/_tips
+  - scope:
+      path: ""
+      type: tips
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      related: true
+      sidebar:
+        nav: "language-archive"
+
+
+
+ # _network
+  - scope:
+      path: ""
+      type: kotlin 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      sidebar:
+        nav: "language-archive"
+
+
+  # _notes/_algorithms
+  - scope:
+     path: ""
+     type: java
+    values:
+     layout: single
+     comments: true
+     read_time: true
+     sidebar:
+       nav: "language-archive"
+     related: true
+     language-archive:
+        - algorithm
+        - algorithm_codes     
+
+#_sub category test
+  # - scope:
+  #    path: "_algorithms/sub"
+  #    type: algorithms
+  #   values:
+  #    layout: single
+  #    categories: [algorithm, subCate]
+  # >>>>>>>>>>>>>>>>>>>> 여기까지 추가 됨

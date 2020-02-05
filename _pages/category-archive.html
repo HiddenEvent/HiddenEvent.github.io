@@ -1,8 +1,8 @@
 ---
-layout: archive
-permalink: /categories/
-title: "Posts by Category"
-author_profile: true
+title: "Category"
+layout: home
+permalink: /category-archive/
+collection: category-archive
 ---
 {% include group-by-array collection=site.posts field="categories" %}
 {% for category in group_names %}

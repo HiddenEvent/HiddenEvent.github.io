@@ -1,22 +1,23 @@
 # main links
 main:
-  - title: "Archive"
-    url: /year-archive/
-  - title: "tag"
-    url: /tags/
+  - title: "Language"
+    url: /language-archive/
+  - title: "Tag"
+    url: /tags-archive/
   - title: "Category"
-    url: /categories/
+    url: /category-archive/
   - title: "Database"
-    url: "/database/"
+    url: "/database-archive/"
+    description: "데이터베이스 관련"
   - title: "Web"
-    url: /Web/
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+    url: /web-archive/
+
+# note navigation links
+language-archive :
+  - title: "Kotlin"
+    url: /kotlin/
+  - title: "Java"
+    url: /java/
+  - title: "Tips"
+    url: /tips/
+
