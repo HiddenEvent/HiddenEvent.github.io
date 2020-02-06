@@ -1,11 +1,11 @@
 ---
 title: "Tips"
 layout: collection
-permalink: /language-archive/tips/
+permalink: /language/tips/
 collection: tips
 redirect_from: "/tips/"
 sidebar:
-  nav: "language-archive"
+  nav: "language"
 ---
 
 

@@ -1,19 +1,20 @@
 # main links
 main:
   - title: "Language"
-    url: /language-archive/
+    url: /language/
+    
   - title: "Tag"
-    url: /tags-archive/
+    url: /tags/
   - title: "Category"
-    url: /category-archive/
+    url: /category/
   - title: "Database"
-    url: "/database-archive/"
+    url: "/database/"
     description: "데이터베이스 관련"
   - title: "Web"
-    url: /web-archive/
+    url: /web/
 
 # note navigation links
-language-archive :
+language :
   - title: "Kotlin"
     url: /kotlin/
   - title: "Java"
@@ -21,3 +22,6 @@ language-archive :
   - title: "Tips"
     url: /tips/
 
+database :
+  - title : "Oracle"
+    url: "oracle"

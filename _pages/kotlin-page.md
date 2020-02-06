@@ -1,11 +1,11 @@
 ---
 title: "Kotlin"
 layout: collection
-permalink: language-archive/kotlin/
+permalink: language/kotlin/
 collection: kotlin
 redirect_from: "/kotlin/"
 sidebar:
-  nav: "language-archive"
+  nav: "language"
 ---
 
 Lists for Kotlin Language

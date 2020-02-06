@@ -65,9 +65,9 @@ reCaptcha:
   secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
-search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search                   : true # true, false (default)
+search_full_content      : true # true, false (default)
+search_provider          : lunr # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -154,7 +154,6 @@ footer:
       icon: "fab fa-fw fa-instagram"
       # url:
 
-
 # Reading Files
 include:
   - .htaccess
@@ -232,7 +231,9 @@ plugins:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jemoji
   - jekyll-include-cache
+  - jekyll-redirect-from
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -240,8 +241,9 @@ whitelist:
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
+  - jemoji
   - jekyll-include-cache
-
+  - jekyll-redirect-from
 
 # Archives
 #  Type
@@ -253,12 +255,12 @@ whitelist:
 #  - <base_path>/tags/my-awesome-tag/index.html ~> path: /tags/
 #  - <base_path>/categories/my-awesome-category/index.html ~> path: /categories/
 #  - <base_path>/my-awesome-category/index.html ~> path: /
-language-archive:
+category_archive:
   type: liquid
-  path: /language-archive/
-tags-archive:
+  path: /categories/
+tag_archive:
   type: liquid
-  path: /tags-archive/
+  path: /tags/
 # https://github.com/jekyll/jekyll-archives
 # jekyll-archives:
 #   enabled:
@@ -282,18 +284,22 @@ compress_html:
 #Collections
 collections_dir: all_collections
 collections:
-#  notes:
-#    output: true
-#    permalink: /:collection/:path/
+
+  #language
   kotlin:
     output: true
-    permalink: /language-archive/:collection/:title
+    permalink: /language/:collection/:title
   java:
     output: true
-    permalink: /language-archive/:collection/:title
+    permalink: /language/:collection/:title
   tips:
     output: true
-    permalink: /language-archive/:collection/:title
+    permalink: /language/:collection/:title
+
+  #database
+  oracle:
+    output: true
+    permalink: /database/:collection/:title
 
 # Defaults
 defaults:
@@ -305,11 +311,9 @@ defaults:
       layout: single
       author_profile: false
       read_time: true
-      comments: true
-      share: true
+      comments: true 
       related: true
-  #>>>>>>>>>>>>>>>>>>> 여기서부터 추가 됨
-  # _pages 부분입니다.
+
   # _pages
   - scope:
       path: ""
@@ -317,7 +321,7 @@ defaults:
     values:
       layout: single
 
-  # _notes/_tips
+  # _language/_tips
   - scope:
       path: ""
       type: tips
@@ -327,11 +331,20 @@ defaults:
       read_time: true
       related: true
       sidebar:
-        nav: "language-archive"
+        nav: "language"
 
+ # _language/_java
+  - scope:
+      path: ""
+      type: java 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      sidebar:
+        nav: "language"
 
-
- # _network
+ # _language/_kotlin
   - scope:
       path: ""
       type: kotlin 
@@ -340,29 +353,15 @@ defaults:
       comments: true
       read_time: true
       sidebar:
-        nav: "language-archive"
-
-
-  # _notes/_algorithms
+        nav: "language"
+        
+ # _database/_oracle
   - scope:
-     path: ""
-     type: java
+      path: ""
+      type: oracle 
     values:
-     layout: single
-     comments: true
-     read_time: true
-     sidebar:
-       nav: "language-archive"
-     related: true
-     language-archive:
-        - algorithm
-        - algorithm_codes     
-
-#_sub category test
-  # - scope:
-  #    path: "_algorithms/sub"
-  #    type: algorithms
-  #   values:
-  #    layout: single
-  #    categories: [algorithm, subCate]
-  # >>>>>>>>>>>>>>>>>>>> 여기까지 추가 됨
+      layout: single
+      comments: true
+      read_time: true
+      sidebar:
+        nav: "database"
