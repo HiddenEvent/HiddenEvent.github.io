@@ -301,6 +301,11 @@ collections:
     output: true
     permalink: /database/:collection/:title
 
+  #database
+  blog:
+    output: true
+    permalink: /blog/:collection/:title
+
 # Defaults
 defaults:
   # _posts

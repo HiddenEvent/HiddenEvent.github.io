@@ -2,16 +2,13 @@
 main:
   - title: "Language"
     url: /language/
-    
-  - title: "Tag"
-    url: /tags/
-  - title: "Category"
-    url: /category/
   - title: "Database"
     url: "/database/"
     description: "데이터베이스 관련"
   - title: "Web"
     url: /web/
+  - title: "Blog"
+    url: /blog/
 
 # note navigation links
 language :
