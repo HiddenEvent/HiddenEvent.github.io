@@ -19,7 +19,7 @@ locale                   : "ko"
 title                    : "개발자의 기억법"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Dong Hyuck Kim"
+name                     : "RichardKim"
 description              : "자연스럽고, 열정적이지만 무리없이..."
 url                      : "https://hiddenevent.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -107,7 +107,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Dong Hyuck Kim"
+  name             : "RichardKim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Developer Balancing Method"
   location         : "Somewhere, Korean"

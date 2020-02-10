@@ -21,8 +21,8 @@ language :
 
 database :
   - title : "Oracle"
-    url: "oracle"
+    url: "/oracle/"
 
 blog : 
   - title : "blog_Management"
-    url : "blog_Management"
+    url : "/blog_Management/"
