@@ -10,7 +10,7 @@ main:
   - title: "Blog"
     url: /blog/
 
-# note navigation links
+# side navigation links
 language :
   - title: "Kotlin"
     url: /kotlin/
@@ -22,3 +22,7 @@ language :
 database :
   - title : "Oracle"
     url: "oracle"
+
+blog : 
+  - title : "blog_Management"
+    url : "blog_Management"

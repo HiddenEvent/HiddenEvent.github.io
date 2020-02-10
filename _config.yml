@@ -16,17 +16,17 @@ minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "
 
 # Site Settings
 locale                   : "ko"
-title                    : "Developer Balancing Method"
+title                    : "개발자의 기억법"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Dong Hyuck Kim"
-description              : "자연스럽고, 열정적인지만 무리없이..."
+description              : "자연스럽고, 열정적이지만 무리없이..."
 url                      : "https://hiddenevent.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "hiddenevent/hiddenevent.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/img/HiddenEvent-logo-white.png"
-masthead_title           : "Developer Balancing Method"
+masthead_title           : "개발자의 기억법"
 breadcrumbs              : true # true, false (default)  현재 보고 있는 포스트의 위치가 어딘지 알려줌...
 words_per_minute         : 200
 comments:
@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Dong Hyuck Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "애를 쓰지만 자연스럽고, \n 열정적인지만 무리없이...(미생)"
+  bio              : "Developer Balancing Method"
   location         : "Somewhere, Korean"
   email            :
   links:
@@ -301,8 +301,8 @@ collections:
     output: true
     permalink: /database/:collection/:title
 
-  #database
-  blog:
+  #Blog
+  blog_Management:
     output: true
     permalink: /blog/:collection/:title
 
@@ -370,3 +370,14 @@ defaults:
       read_time: true
       sidebar:
         nav: "database"
+
+  # _blog/_blog_management
+  - scope:
+      path: ""
+      type: blog_Management 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      sidebar:
+        nav: "blog"
