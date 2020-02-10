@@ -302,7 +302,7 @@ collections:
     permalink: /database/:collection/:title
 
   #Blog
-  blog_Management:
+  management:
     output: true
     permalink: /blog/:collection/:title
 
@@ -371,10 +371,10 @@ defaults:
       sidebar:
         nav: "database"
 
-  # _blog/_blog_management
+  # _blog/management
   - scope:
       path: ""
-      type: blog_Management 
+      type: management 
     values:
       layout: single
       comments: true
