@@ -30,19 +30,19 @@ masthead_title           : "개발자의 기억법"
 breadcrumbs              : true # true, false (default)  현재 보고 있는 포스트의 위치가 어딘지 알려줌...
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider               : disqus # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname- # 블로그 댓글 기능 https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
-  facebook:
+    server               : https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+  facebook: https://developers.facebook.com/docs/plugins/comments
     # https://developers.facebook.com/docs/plugins/comments
     appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    num_posts            : 5 # 5 (default)
+    colorscheme          : dark # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme                : github-dark # "github-light" (default), "github-dark"
+    issue_term           : pathname # "pathname" (default)
 staticman:
   allowedFields          : # ['name', 'email', 'url', 'message']
   branch                 : # "master"
@@ -306,6 +306,8 @@ collections:
     output: true
     permalink: /blog/:collection/:title
 
+
+
 # Defaults
 defaults:
   # _posts
@@ -376,7 +378,7 @@ defaults:
       path: ""
       type: management 
     values:
-      layout: single
+      layout: posts
       comments: true
       read_time: true
       sidebar:
