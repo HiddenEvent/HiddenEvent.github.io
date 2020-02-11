@@ -28,7 +28,7 @@ toc_label: "My Toc Title"	// 목차의 제목
 toc_Icon: "cog"	            // 목차 아이콘
 toc_sticky: true	        // 목차가 화면을 따라옴
 
-categories: [뭐시기,뭐시기]
+categories: [1번,뭐시기]
 tags: [뭐시기, 뭐시기]
 혹은 tags: -뭐시기 -뭐시기
 ```
