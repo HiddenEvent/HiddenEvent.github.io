@@ -5,6 +5,7 @@ toc: true
 toc_label: "yaml 작성 방법"
 toc_icon: "file-alt"
 toc_sticky: true
+comments: true
 ---
 ------
 ### <center>" YAML 이란? "</center>

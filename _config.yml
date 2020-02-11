@@ -32,7 +32,7 @@ words_per_minute         : 200
 comments:
   provider               : "disqus" # 블로그 댓글 기능 false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : "disqus_RichardKim" # 블로그 댓글 기능 https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "hiddenevent-github-io" # 블로그 댓글 기능 https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -340,6 +340,10 @@ defaults:
       comments: true
       read_time: true
       related: true
+      share: true
+      related: true
+      toc_ads: true
+      toc_sticky: true
       sidebar:
         nav: "language"
 
@@ -351,6 +355,11 @@ defaults:
       layout: single
       comments: true
       read_time: true
+      related: true
+      share: true
+      related: true
+      toc_ads: true
+      toc_sticky: true
       sidebar:
         nav: "language"
 
@@ -362,6 +371,11 @@ defaults:
       layout: single
       comments: true
       read_time: true
+      related: true
+      share: true
+      related: true
+      toc_ads: true
+      toc_sticky: true
       sidebar:
         nav: "language"
         
@@ -373,6 +387,11 @@ defaults:
       layout: single
       comments: true
       read_time: true
+      related: true
+      share: true
+      related: true
+      toc_ads: true
+      toc_sticky: true
       sidebar:
         nav: "database"
 
@@ -381,8 +400,13 @@ defaults:
       path: ""
       type: management 
     values:
-      layout: posts
+      layout: single
       comments: true
       read_time: true
+      related: true
+      share: true
+      related: true
+      toc_ads: true
+      toc_sticky: true
       sidebar:
         nav: "blog"
