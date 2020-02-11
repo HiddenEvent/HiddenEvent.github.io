@@ -1,10 +1,12 @@
 ---
-title: "Blog"
+title: "깃허브 블로그 만들기"
 layout: home
 permalink: /blog/
 collection: blog
 sidebar:
   nav: "blog"
 ---
-# Github blog 관리
-깃허브 블로그 관리 방법을 기술해놔야 겠다...
+# Jekyll & GitHub PAGE 를 이용한 블로그 만들기 
+
+[깃허브 블로그 만들기](https://devinlife.com/howto/)  
+설명이 아주 잘되있음...

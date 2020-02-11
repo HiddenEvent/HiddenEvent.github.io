@@ -302,10 +302,6 @@ collections:
     permalink: /database/:collection/:title
 
   #Blog
-  management:
-    output: true
-    permalink: /blog/:collection/:title
-
 
 
 # Defaults
