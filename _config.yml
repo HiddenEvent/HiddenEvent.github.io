@@ -115,10 +115,10 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: mailto:your.name@email.com
+      url: mailto:hiddeneventor@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
+      url: "https://devinlife.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -127,7 +127,7 @@ author:
       # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
+      url: "https://github.com/hiddenevent"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url: "https://instagram.com/"
@@ -143,7 +143,7 @@ footer:
       # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
+      url: "https://github.com/hiddenevent"
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
@@ -222,7 +222,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -326,6 +326,11 @@ defaults:
       type: pages
     values:
       layout: single
+      author_profile: false
+      read_time: true
+      comments: true
+      share: true
+      related: true
 
   # _language/_tips
   - scope:
@@ -390,19 +395,3 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "database"
-
-  # _blog/management
-  - scope:
-      path: ""
-      type: management 
-    values:
-      layout: single
-      comments: true
-      read_time: true
-      related: true
-      share: true
-      related: true
-      toc_ads: true
-      toc_sticky: true
-      sidebar:
-        nav: "blog"

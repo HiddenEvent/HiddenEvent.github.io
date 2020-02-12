@@ -9,10 +9,6 @@ main:
     url: /web/
   - title: "Blog"
     url: /blog/
-  - title: "Categories"
-    url: /categories/	
-  - title: "Tags"
-    url: /tags/
 
 # side navigation links
 language :
