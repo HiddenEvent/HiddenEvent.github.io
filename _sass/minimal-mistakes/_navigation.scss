@@ -479,6 +479,7 @@
   font-family: $sans-serif-narrow;
   font-size: $type-size-5;
   font-weight: bold;
+
 }
 
 .nav__sub-title {
@@ -504,11 +505,12 @@
   border-radius: $border-radius;
   -webkit-box-shadow: $box-shadow;
   box-shadow: $box-shadow;
-
+  
   .nav__title {
     color: #fff;
     font-size: $type-size-6;
-    background: $primary-color;
+    // background: $primary-color;
+    background-color: darkorange;
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
@@ -525,7 +527,7 @@
   width: 100%;
   list-style: none;
   font-size: $type-size-6;
-
+  background: lightsteelblue;
   @include breakpoint($large) {
     font-size: $type-size-7;
   }

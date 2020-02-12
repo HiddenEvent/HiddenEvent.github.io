@@ -12,7 +12,7 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "sunrise" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "ko"
@@ -284,7 +284,8 @@ compress_html:
 #Collections
 collections_dir: all_collections
 collections:
-
+  all_collections:
+    output: true
   #language
   kotlin:
     output: true
@@ -306,19 +307,6 @@ collections:
 
 # Defaults
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-      toc_ads: true
-      toc_sticky: true
 
   # _pages
   - scope:
@@ -340,9 +328,9 @@ defaults:
       layout: single
       comments: true
       read_time: true
-      related: true
       share: true
       related: true
+      toc: true
       toc_ads: true
       toc_sticky: true
       sidebar:
@@ -356,9 +344,9 @@ defaults:
       layout: single
       comments: true
       read_time: true
-      related: true
       share: true
       related: true
+      toc: true
       toc_ads: true
       toc_sticky: true
       sidebar:
@@ -372,9 +360,9 @@ defaults:
       layout: single
       comments: true
       read_time: true
-      related: true
       share: true
       related: true
+      toc: true
       toc_ads: true
       toc_sticky: true
       sidebar:
@@ -388,9 +376,9 @@ defaults:
       layout: single
       comments: true
       read_time: true
-      related: true
       share: true
       related: true
+      toc: true
       toc_ads: true
       toc_sticky: true
       sidebar:
