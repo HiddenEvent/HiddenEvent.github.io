@@ -4,6 +4,7 @@ excerpt: "코틀린으로 앱 만들기"
 categories:
   - kotlin
 tags:
+  - categories
   - kotlin
   - android
   - 안드로이드

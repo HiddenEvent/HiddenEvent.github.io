@@ -1,6 +1,6 @@
 ---
 title: "Database"
-layout: home
+layout: category
 permalink: /database/
 collection: database
 sidebar:

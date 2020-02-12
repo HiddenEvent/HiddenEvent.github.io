@@ -1,6 +1,6 @@
 ---
 title: "Web"
-layout: home
+layout: category
 permalink: /web/
 collection: web
 sidebar:
