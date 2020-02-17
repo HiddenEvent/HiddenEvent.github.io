@@ -22,6 +22,5 @@ main:
 database :
   - title : "Oracle"
     url: "/oracle/"
-sqlp :
   - title : "Sqlp"
     url: "/sqlp/"
