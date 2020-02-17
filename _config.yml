@@ -302,6 +302,10 @@ collections:
     output: true
     permalink: /database/:collection/:title
 
+  sqlp:
+    output: true
+    permalink: /database/:collection/:title
+
   #Blog
 
 
@@ -372,6 +376,22 @@ defaults:
   - scope:
       path: ""
       type: oracle 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "database"
+
+   # _database/_sqlp
+  - scope:
+      path: ""
+      type: sqlp 
     values:
       layout: single
       comments: true
