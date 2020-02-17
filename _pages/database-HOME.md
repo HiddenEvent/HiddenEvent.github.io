@@ -1,7 +1,7 @@
 ---
 title: "Database"
 layout: category
-permalink: /database/
+permalink: database/
 collection: database
 sidebar:
   nav: "database"

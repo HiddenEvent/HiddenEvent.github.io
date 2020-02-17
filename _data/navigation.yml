@@ -1,24 +1,30 @@
 # main links
 main:
-  # - title: "Language"
-  #   url: /language/
+  - title: "Language"
+    url: /language/
   - title: "Database"
     url: "/database/"
     description: "데이터베이스 관련"
+  - title: "Algorithm"
+    url: "/algorithm/"
+    description: "알고리즘 공부"
   # - title: "Web"
   #   url: /web/
   # - title: "Blog"
   #   url: /blog/
 
 # side navigation links
-# language :
-#   - title: "Kotlin"
-#     url: /kotlin/
+language :
+  - title: "Kotlin"
+    url: /kotlin/
 #   - title: "Java"
 #     url: /java/
 #   - title: "Tips"
 #     url: /tips/
-
+algorithm:
+  - title: "al_Kotlin"
+    url: /al_kotlin/
+    
 database :
   - title : "Oracle"
     url: "/oracle/"

@@ -306,7 +306,10 @@ collections:
     output: true
     permalink: /database/:collection/:title
 
-  #Blog
+  #Algotiyhm
+  al_kotlin:
+    output: true
+    permalink: /algorithm/:collection/:title
 
 
 # Defaults
@@ -403,3 +406,20 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "database"
+
+   # _algorithm/_al_kotlin
+  - scope:
+      path: ""
+      type: al_kotlin 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "algorithm"
+        
