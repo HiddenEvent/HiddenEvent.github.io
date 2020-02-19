@@ -22,7 +22,7 @@ fun main(){
     var array = arrayOf(8,10,5,1,7,6,4,3,2,9); //정렬 할 데이터 값
     var temp: Int;   //비교해서 더 큰값을 임시로 담을 변수
     var count: Int ;  //총 비교횟수
-    for(pt in 1 until array.size) { //정렬할 데이터 사이즈만큼 탐색 KEY 값은 1
+    for(pt in 1 until array.size) { // 1..size KEY 값 증가
         for (i in pt - 1 downTo 0) { // pt-1하는 이유는 KEY 인덱스 부터 탐색 내림차순으로 정렬 하기위해...
             count++
             if (array[i] > array[i+1]) {
@@ -37,4 +37,10 @@ fun main(){
     array.forEach { print("$it ") }
     print("총 카운트 $count")
 }
-~~~
+~~~ 
+
+
+```mermaid
+graph LR
+   A -- text --> B -- text2 --> C
+```
