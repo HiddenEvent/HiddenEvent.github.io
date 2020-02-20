@@ -23,3 +23,66 @@ last_modified_at : 2020-02-18
     3. 다시 퀵 정렬을 적용한다.
 
 ### 생각해야될 부분
+1. 함수로 분리 하자!
+2. quickSort 함수에 array(정렬할 데이터가 들어가 있는 배열) ,Start(초기값), End(사이즈)을 넘겨준다
+3. 퀵소트 함수 호출부에서는 파티션을 호출하여 왼쪽 정렬, 오른쪽 정렬을 하고 정렬이 계속 될때 까지
+   퀵소트 함수를 재귀 호출 하여 정렬하게 한다.
+4. **파티션 부분**에서는 pivot을 배열의 중간 값으로 정하고,
+  start와 pivot을 비교 더 크냐를 비교,
+  end와 pivot을 비교 더 작냐를 비교,
+  start 와 end가 만나면 swap 함수 호출하여 큰값, 작은값 자리 교체
+  
+
+
+~~~java
+//메인 부분
+fun main(){
+    println("quick Sort 알고리즘")
+    val array = arrayOf(8,5,1,7,6,4,3,2,9) //정렬 할 데이터 값
+    printArr(array)
+    quickSort(array, 0, array.size -1)
+    printArr(array)
+}
+~~~
+~~~java
+// 퀵소트 함수 호출부
+fun quickSort(arr: Array<Int>, start:Int, end:Int){
+    var part2 = partition(arr, start, end);
+    if(start < part2 - 1){
+        quickSort(arr, start, part2-1);
+    }
+    if(part2 < end){
+        quickSort(arr, part2, end)
+    }
+}
+~~~
+~~~java
+// 파티션 함수 호출부
+fun  partition(arr:Array<Int>,start:Int, end:Int): Int {
+    var start = start
+    var end = end;
+    var pivot = arr[(start + end) / 2 ]
+    while (start <= end){ // 분할 정복
+        while(arr[start] < pivot) start++
+        while(arr[end] > pivot) end--
+        if( start <= end){
+            swap(arr, start, end);
+            start++
+            end--
+        }
+    }
+    return start
+}
+~~~
+~~~java
+// 큰값 <=> 작은값 변경 + 출력 함수 부
+fun swap(arr:Array<Int>, start:Int, end:Int) {
+    var temp = arr[end]
+    arr[end] = arr[start]
+    arr[start] = temp
+}
+fun printArr(arr:Array<Int>){
+    arr.forEach { print("$it, ")  }
+    println()
+}
+~~~

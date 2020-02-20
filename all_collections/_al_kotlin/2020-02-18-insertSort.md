@@ -32,19 +32,15 @@ style id2 fill:#bbf,stroke:#f66,stroke-width:2px,color:#fff,stroke-dasharray: 5,
 fun main(){
     var array = arrayOf(8,5,1,7,6,4,3,2,9); //정렬 할 데이터 값
     var temp: Int;   //비교해서 더 큰값을 임시로 담을 변수
-    var count: Int ;  //총 비교횟수
-    for(pt in 1 until array.size) { // 1..size KEY 값 증가
-        for (i in pt - 1 downTo 0) { // pt-1하는 이유는 KEY 인덱스 부터 탐색 내림차순으로 정렬 하기위해...
-            count++
-            if (array[i] > array[i+1]) {
-                temp = array[i+1]
-                array[i+1] = array[i]
-                array[i] = temp
-            } else { //앞 데이터가 더 크지 않으면 KEY 인덱스 값까지 정렬이 완료된 상태이므로 다음 KEY 값으로....
-                break
-            }
-        }
+    var count: Int;  //총 비교횟수
+    
+    var pivot: Int;
+    var start: Int;
+    var end: Int;
+    fun test(){
+        print("ggg");
     }
+   
     array.forEach { print("$it ") }
     print("총 카운트 $count")
 }
