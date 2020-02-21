@@ -29,7 +29,7 @@ last_modified_at : 2020-02-18
    퀵소트 함수를 재귀 호출 하여 정렬하게 한다.
 4. **파티션 부분**에서는 pivot을 배열의 중간 값으로 정하고,
   start와 pivot을 비교 더 크냐를 비교,
-  end와 pivot을 비교 더 작냐를 비교,
+  end와 pivot을 비교 더 작냐를 비교 ,
   start 와 end가 만나면 swap 함수 호출하여 큰값, 작은값 자리 교체
   
 
@@ -48,10 +48,10 @@ fun main(){
 // 퀵소트 함수 호출부
 fun quickSort(arr: Array<Int>, start:Int, end:Int){
     var part2 = partition(arr, start, end);
-    if(start < part2 - 1){
+    if(start < part2 - 1){ // Left의 반
         quickSort(arr, start, part2-1);
     }
-    if(part2 < end){
+    if(part2 < end){     // right의 반쪽
         quickSort(arr, part2, end)
     }
 }
@@ -59,19 +59,19 @@ fun quickSort(arr: Array<Int>, start:Int, end:Int){
 ~~~java
 // 파티션 함수 호출부
 fun  partition(arr:Array<Int>,start:Int, end:Int): Int {
-    var start = start
-    var end = end;
+    var temStart = start
+    var temEnd = end;
     var pivot = arr[(start + end) / 2 ]
-    while (start <= end){ // 분할 정복
-        while(arr[start] < pivot) start++
-        while(arr[end] > pivot) end--
-        if( start <= end){
-            swap(arr, start, end);
-            start++
-            end--
+    while (temStart <= temEnd){ // 분할 정복
+        while(arr[temStart] < pivot) temStart++
+        while(arr[temEnd] > pivot) temEnd--
+        if( temStart <= temEnd){
+            swap(arr, temStart, temEnd);
+            temStart++
+            temEnd--
         }
     }
-    return start
+    return temStart
 }
 ~~~
 ~~~java
