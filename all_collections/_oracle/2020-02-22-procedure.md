@@ -13,11 +13,12 @@ last_modified_at : 2020-02-12
 ---
 
 
---=========== PL/SQL 프로시져 ===========
---- DB내에서 프로그램밍 할수 있는 기능
---- 프로시져 확인하기 (SELECT * FROM USER_SOURCE; )
+### =========== PL/SQL 프로시져 ===========
+- DB내에서 프로그램밍 할수 있는 기능
+- 프로시져 확인하기 (SELECT * FROM USER_SOURCE; )
 
---프로시져를 만드는 예제
+#### 프로시져를 만드는 예제
+~~~sql
 SET SERVEROUTPUT ON
 CREATE OR REPLACE PROCEDURE nmChange IS
 BEGIN
@@ -27,10 +28,10 @@ BEGIN
 END;
 /
 execute nmChange;--프로시져를 실행.
+~~~
 
-
---# (입력)파라미터가 있는 프로시저 예제 1
-
+#### (입력)파라미터가 있는 프로시저 예제 1
+~~~sql
 CREATE OR REPLACE PROCEDURE userProc1(-- 1. 생성
     pi_userID IN USERTBL.USERID%TYPE  -- 입력받을 파라미터명 타입
 ) AS
@@ -43,8 +44,9 @@ BEGIN
 END;
 /
 EXECUTE userProc1('JKW'); -- 2. 실행
-
---# (입력)파라미터가 있는 프로시저 예제 2
+~~~
+#### (입력)파라미터가 있는 프로시저 예제 2
+~~~sql
 select * from emp;
 CREATE OR REPLACE PROCEDURE sla_sal( p_empno IN emp.empno%type) -- 1.IN은 디폴트이기 때문에 생략 가능하다.
 AS
@@ -59,8 +61,10 @@ BEGIN
 END;
 /
 EXECUTE sla_sal(7369); -- 2. 실행
+~~~
     
---# (입력 , 출력)파라미터가 있는 프로시저 예제 1
+#### (입력 , 출력)파라미터가 있는 프로시저 예제 1
+~~~sql
 CREATE SEQUENCE userSEQ;
 CREATE TABLE testTbl(userId INT, txt NCHAR(10));
 -- 1. 프로시져 생성
@@ -80,8 +84,10 @@ BEGIN
 END;
 /
 SELECT * FROM STUDENT;
+~~~
 
---# (입력 , 출력)파라미터가 있는 프로시저 예제 2
+#### (입력 , 출력)파라미터가 있는 프로시저 예제 2
+
 -- 1. 프로시져 생성
 CREATE OR REPLACE PROCEDURE ENUM_NM_SAL( p_no IN professor.profno%type, o_nm OUT professor.name%type, o_sal OUT professor.pay%type) -- 1.IN은 디폴트이기 때문에 생략 가능하다.
 AS
