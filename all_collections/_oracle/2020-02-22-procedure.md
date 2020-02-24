@@ -1,23 +1,25 @@
 ---
-title : "PROCEDURE 관련"
+title : "프로시저"
 toc: true
 toc_sticky: true
-toc_label: "<a href='/database/oracle/'>PROCEDURE 관련</a>"
+toc_label: "<a href='/database/oracle/'>프로시저</a>"
 categories:
   - oracle
 tags:
   - 오라클
   - PROCEDURE
   - 함수
-last_modified_at : 2020-02-12
+  - 프로시저
+  - 스토어드 프로시저
+last_modified_at : 2020-02-22
 ---
 
 
-### =========== PL/SQL 프로시져 ===========
+### PL/SQL 프로시저
 - DB내에서 프로그램밍 할수 있는 기능
-- 프로시져 확인하기 (SELECT * FROM USER_SOURCE; )
+- 프로시저 확인하기 (SELECT * FROM USER_SOURCE; )
 
-#### 프로시져를 만드는 예제
+#### 프로시저를 만드는 예제
 ~~~sql
 SET SERVEROUTPUT ON
 CREATE OR REPLACE PROCEDURE nmChange IS
@@ -27,7 +29,7 @@ BEGIN
     WHERE deptno = 20;
 END;
 /
-execute nmChange;--프로시져를 실행.
+execute nmChange;--프로시저를 실행.
 ~~~
 
 #### (입력)파라미터가 있는 프로시저 예제 1
@@ -45,6 +47,7 @@ END;
 /
 EXECUTE userProc1('JKW'); -- 2. 실행
 ~~~
+
 #### (입력)파라미터가 있는 프로시저 예제 2
 ~~~sql
 select * from emp;
@@ -88,6 +91,7 @@ SELECT * FROM STUDENT;
 
 #### (입력 , 출력)파라미터가 있는 프로시저 예제 2
 
+~~~sql
 -- 1. 프로시져 생성
 CREATE OR REPLACE PROCEDURE ENUM_NM_SAL( p_no IN professor.profno%type, o_nm OUT professor.name%type, o_sal OUT professor.pay%type) -- 1.IN은 디폴트이기 때문에 생략 가능하다.
 AS
@@ -107,8 +111,10 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('교수이름은 '||outputData1||' 급여는 '||outputData2||'입니다.');
 END;
 /
+~~~
 
---# (입력)파라미터로 INSERT하는 프로시저 예제 1
+#### (입력)파라미터로 INSERT하는 프로시저 예제 1
+~~~sql
 -- 1. 프로시져 만들기
 CREATE OR REPLACE PROCEDURE EMP_INSERT(p_empno emp.empno%type, p_ename emp.ename%type, p_job emp.job%type, p_mgr emp.mgr%type, p_sal emp.sal%type) --IN 생략가능
 IS
@@ -116,11 +122,14 @@ BEGIN
     INSERT INTO EMP(empno,ename,job,mgr,sal) VALUES(p_empno,p_ename,p_job,p_mgr,p_sal );
 END;
 /
+~~~
+~~~sql
 -- 2. 프로시져 실행!
 EXECUTE EMP_INSERT(4000,'Smith','Clert',7900,3500);
 
 select * from EMP ; --잘 들어갔나 확인
-
+~~~
+~~~sql
 
 CREATE OR REPLACE PROCEDURE ex2(p_empno emp.empno%type) --IN 생략가능
 IS
@@ -144,3 +153,4 @@ BEGIN
 END;
 /
 EXECUTE ex2(1000);
+~~~
