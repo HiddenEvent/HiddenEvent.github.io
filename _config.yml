@@ -290,6 +290,9 @@ collections:
   kotlin:
     output: true
     permalink: /language/:collection/:title
+  kotlinApp:
+    output: true
+    permalink: /language/:collection/:title
   java:
     output: true
     permalink: /language/:collection/:title
@@ -363,6 +366,22 @@ defaults:
   - scope:
       path: ""
       type: kotlin 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "language"
+
+   # _language/_kotlinApp
+  - scope:
+      path: ""
+      type: kotlinApp
     values:
       layout: single
       comments: true

@@ -17,6 +17,8 @@ main:
 language :
   - title: "Kotlin"
     url: /kotlin/
+  - title: "코틀린 앱만들기"
+    url: /kotlinApp/
 #   - title: "Java"
 #     url: /java/
 #   - title: "Tips"
