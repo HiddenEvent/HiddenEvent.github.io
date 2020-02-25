@@ -293,6 +293,9 @@ collections:
   kotlinApp:
     output: true
     permalink: /language/:collection/:title
+  flutter:
+    output: true
+    permalink: /language/:collection/:title
   java:
     output: true
     permalink: /language/:collection/:title
@@ -393,7 +396,22 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "language"
-        
+
+  # _language/_flutter
+  - scope:
+      path: ""
+      type: flutter
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "language"
  # _database/_oracle
   - scope:
       path: ""

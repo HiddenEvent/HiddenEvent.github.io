@@ -19,6 +19,8 @@ language :
     url: /kotlin/
   - title: "코틀린 앱만들기"
     url: /kotlinApp/
+  - title: "Flutter"
+    url: /flutter/
 #   - title: "Java"
 #     url: /java/
 #   - title: "Tips"
