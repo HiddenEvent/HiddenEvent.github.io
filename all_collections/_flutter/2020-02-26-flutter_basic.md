@@ -175,3 +175,6 @@ class _HelloPageState extends State<HelloPage> {
   }
 }
 ~~~
+> <https://flutter.dev/docs/reference/widgets>  [flutter doc 사용법페이지]
+> <https://flutterstudio.app/>  [flutter Studio UI확인용] (실제로 개발하는 소스로 사용하기는 부적절)
+> <https://material.io/design/> [material.io 사용법]

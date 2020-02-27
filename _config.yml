@@ -25,7 +25,7 @@ url                      : "https://hiddenevent.github.io/"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "hiddenevent/hiddenevent.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/assets/img/HiddenEvent-logo-white.png"
+logo                     : #
 masthead_title           : "개발자의 기억법"
 breadcrumbs              : true # true, false (default)  현재 보고 있는 포스트의 위치가 어딘지 알려줌...
 words_per_minute         : 200
@@ -406,7 +406,6 @@ defaults:
       comments: true
       read_time: true
       share: true
-      related: true
       toc: true
       toc_ads: true
       toc_sticky: true
