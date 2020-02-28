@@ -175,6 +175,14 @@ class _HelloPageState extends State<HelloPage> {
   }
 }
 ~~~
-> <https://flutter.dev/docs/reference/widgets>  [flutter doc 사용법페이지]
-> <https://flutterstudio.app/>  [flutter Studio UI확인용] (실제로 개발하는 소스로 사용하기는 부적절)
-> <https://material.io/design/> [material.io 사용법]
+### 5. 참고 사이트
+> <https://flutter.dev/docs/reference/widgets>  [flutter doc 사용법페이지]   
+> <https://flutterstudio.app/>  [flutter Studio UI확인용] (실제로 개발하는 소스로 사용하기는 부적절)   
+> <https://material.io/design/> [material.io 사용법]   
+> <https://material.io/design/>   
+
+### 6. 안드로이드 스튜디오 단추키
+- **cntl + alt + L** = 소스 자동 정리
+- **alt + enter**    = 코드 밖깥쪽 wrapping
+- **alt + Q**        = 설명 보기   
+- **shift + F6**    = 클래스명을 바꿀때 프로젝트 전체에 바꿔이름으로 적용
