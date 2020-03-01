@@ -1,3 +1,6 @@
 # Post
 
-Post폴더가 존재함을 알리기 위한 파일.
+깃허브 참고 자료
+<https://shryu8902.github.io/jekyll/jekyll-on-windows/>
+
+<https://devinlife.com/howto%20github%20pages/new-blog-from-template/>
