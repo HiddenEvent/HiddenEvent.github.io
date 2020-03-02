@@ -22,8 +22,7 @@ last_modified_at: 2020-02-27
 ![사진설명]({{ site.url }}{{ site.baseurl }}/assets/img/flutter/flutter_basic/img-02.PNG){: .align-center}
 
 #### 해결
-- 상단메뉴에 File -> settings -> intentions 검색 -> dart 검색 -> 체크
 
-![사진설명]({{ site.url }}{{ site.baseurl }}/assets/img/flutter/flutter_basic/img-03.png){: .align-center}
+![상단메뉴에 File -> settings -> intentions 검색 -> dart 검색 -> 체크]({{ site.url }}{{ site.baseurl }}/assets/img/flutter/flutter_basic/img-03.PNG){: .align-center}
 
 - 이것땜에 한참을 고생한 듯....

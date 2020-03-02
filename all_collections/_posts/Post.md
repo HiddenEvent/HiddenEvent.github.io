@@ -7,3 +7,9 @@
 
 # 이미지 팝업 설정 하는 방법
 <https://imyeonn.github.io/blog/blog/206/>
+
+# 다이어 그램 그리는 사이트
+<https://www.draw.io/>
+
+# 앱 아이콘 이미지 설정하기 위한 사이트
+<https://appicon.co/>
