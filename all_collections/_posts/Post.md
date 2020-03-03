@@ -13,3 +13,7 @@
 
 # 앱 아이콘 이미지 설정하기 위한 사이트
 <https://appicon.co/>
+
+# 폰트 무료 사이트
+- pacifico 글꼴 이쁘당
+<https://fonts.google.com/>
