@@ -59,3 +59,13 @@ last_modified_at: 2020-03-09
 
 6. Flutter Spinkit
   - 프로그래스바 로딩중일때 애니메이션 표현
+
+7. animated_text_kit: ^2.0.0
+  - 텍스트를 애니메이션으로 표현하는 등 다양한 애니메이션 기능을 갖는 패키지.
+
+8. firebase_core: ^0.4.4+2
+   firebase_auth: ^0.15.5+2
+   cloud_firestore: ^0.13.4+1
+
+   - 파이어 베이스 기능 사용
+   

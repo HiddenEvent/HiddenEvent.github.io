@@ -1,5 +1,5 @@
 ---
-title: [다트] Const vs Final
+title: (다트) Const vs Final
 excerpt: "플루터 토이프로젝트"
 toc_label: "<a href='/language/flutter/'>Flutter 관련</a>"
 categories:
