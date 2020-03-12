@@ -69,3 +69,5 @@ last_modified_at: 2020-03-09
 
    - 파이어 베이스 기능 사용
    
+9. modal_progress_hud: ^0.1.3
+  - 로그인 화면 UI 기능 개선 
