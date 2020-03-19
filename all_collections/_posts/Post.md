@@ -24,6 +24,7 @@
 
 ## 앱 아이콘 이미지 설정하기 위한 사이트
 <https://appicon.co/>
+<https://icons8.com/>
 
 ## 폰트 무료 사이트
 - pacifico 글꼴 이쁘당
@@ -34,3 +35,17 @@
 
 ## 앱 디자인 소스 보기
 <https://dribbble.com/>
+
+## RESTapi 요청을 쉽게 확인하는 사이트
+크롬 확장 프로그램에서 RESTlset 검색해서 다운로드
+
+## 머트리얼 디자인 소스 확인하는 사이트
+<material.io>
+
+
+## 머트리얼 디자인 소스 확인하는 사이트
+<https://medium.com/flutter-community/flutter-animations-cheat-sheet-7f8cebfb850c>
+
+## 디자인 직접하기
+유데미 5섹션 1
+<https://www.canva.com/>
