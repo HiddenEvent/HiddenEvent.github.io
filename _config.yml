@@ -302,6 +302,10 @@ collections:
   tips:
     output: true
     permalink: /language/:collection/:title
+  nodejs:
+    output: true
+    permalink: /language/:collection/:title
+
 
   #database
   oracle:
@@ -364,6 +368,23 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "language"
+
+   # _language/_nodejs
+  - scope:
+      path: ""
+      type: nodejs
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "language"
+
 
  # _language/_kotlin
   - scope:
