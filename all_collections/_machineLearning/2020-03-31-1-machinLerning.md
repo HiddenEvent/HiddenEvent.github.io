@@ -1,12 +1,12 @@
 ---
-title: (Machine) Pythonic Code
+title: (Machine) 1. Pythonic Code
 excerpt: "python 기초"
 categories:
   - Machine
 tags:
   - Machine
   - 머신러닝
-last_modified_at: 2020-03-28
+last_modified_at: 2020-03-31
 ---
 ## 1. 개념
 - 남이 이해하기 쉬운 코드를 짜기 위한 파이썬 스타일의 코딩 기법

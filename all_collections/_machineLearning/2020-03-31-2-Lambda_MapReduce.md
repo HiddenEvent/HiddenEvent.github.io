@@ -1,12 +1,12 @@
 ---
-title: (Machine) Lambda & MapReduce
+title: (Machine) 2. Lambda & MapReduce
 excerpt: "python 기초"
 categories:
   - Machine
 tags:
   - Machine
   - 머신러닝
-last_modified_at: 2020-03-28
+last_modified_at: 2020-03-31
 ---
 ## 1. 학습 목표
 함수처럼 사용가능한 익명함수인 Lambda, Sequence 자료형의 데이터에서 함수를 적용하는 방법인 Map Function 과
