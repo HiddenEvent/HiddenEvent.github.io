@@ -47,5 +47,5 @@
 <https://medium.com/flutter-community/flutter-animations-cheat-sheet-7f8cebfb850c>
 
 ## 디자인 직접하기
-유데미 5섹션 1
+- 유데미 5섹션 1
 <https://www.canva.com/>

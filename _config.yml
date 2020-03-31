@@ -305,6 +305,9 @@ collections:
   nodejs:
     output: true
     permalink: /language/:collection/:title
+  machineLearning:
+    output: true
+    permalink: /language/:collection/:title
 
 
   #database
@@ -432,6 +435,22 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "language"
+
+  # _language/_machineLearning
+  - scope:
+      path: ""
+      type: machineLearning
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "language"
+
  # _database/_oracle
   - scope:
       path: ""

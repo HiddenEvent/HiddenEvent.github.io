@@ -23,6 +23,8 @@ language :
     url: /flutter/
   - title: "node.js"
     url: /nodejs/
+  - title: "머신러닝"
+    url: /machineLearning/
 #   - title: "Java"
 #     url: /java/
 #   - title: "Tips"
