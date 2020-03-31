@@ -1,6 +1,6 @@
 ---
 title: (Machine) Pythonic Code
-excerpt: "노드 기초"
+excerpt: "python 기초"
 categories:
   - Machine
 tags:
