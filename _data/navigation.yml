@@ -1,6 +1,6 @@
 # main links
 main:
-  - title: "Language"
+  - title: "App & WEB"
     url: /language/
   - title: "Database"
     url: "/database/"
@@ -25,10 +25,10 @@ language :
     url: /nodejs/
   - title: "머신러닝"
     url: /machineLearning/
-#   - title: "Java"
-#     url: /java/
-#   - title: "Tips"
-#     url: /tips/
+  - title: "Java"
+    url: /java/
+  - title: "구름IDE"
+    url: /groom/
 algorithm:
   - title: "al_Kotlin"
     url: /al_kotlin/

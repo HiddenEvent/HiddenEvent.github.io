@@ -299,7 +299,7 @@ collections:
   java:
     output: true
     permalink: /language/:collection/:title
-  tips:
+  groom:
     output: true
     permalink: /language/:collection/:title
   nodejs:
@@ -343,7 +343,7 @@ defaults:
   # _language/_tips
   - scope:
       path: ""
-      type: tips
+      type: groom
     values:
       layout: single
       comments: true

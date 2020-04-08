@@ -1,0 +1,14 @@
+---
+title: (Machine) 15. linear_regression
+excerpt: "머신러닝 데이터 분석"
+categories:
+  - Machine
+tags:
+  - Machine
+  - 머신러닝
+last_modified_at: 2020-04-04
+---
+
+# # 학습 목표
+데이터 분석 대회인 Kaggle 에서 기본적으로 사용되는 데이터 중 하나인 Titanic Project 데이터를 이용하여 지금까지
+배운 데이터 핸들링 방법들을 실습하고, Kaggle 대회에 실제 분석 결과를 제출하는 방법에 대해 공부합니다.
