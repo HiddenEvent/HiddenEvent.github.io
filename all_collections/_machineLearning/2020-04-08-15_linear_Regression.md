@@ -25,11 +25,8 @@ H(x) - y
 $$
 - H(x)는 현재 가설 y는 실제 데이터를 뜻함.
 
-
 $$
-\begin{align}
-Cost & = \frac{1}{2}(\hat{Y}-Y)^2 
-\end{align}
+cost(W, b) = \frac{1}{m}\sum_{i=1}^m{(H( x^{(i)}) - y^{(i)})^2}
 $$
 
 ## 3. Minimize cost
