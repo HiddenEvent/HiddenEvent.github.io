@@ -287,6 +287,9 @@ collections:
   all_collections:
     output: true
   #language
+  ec2:
+    output: true
+    permalink: /aws/:collection/:title
   kotlin:
     output: true
     permalink: /language/:collection/:title
@@ -339,6 +342,22 @@ defaults:
       comments: true
       share: true
       related: true
+
+  # _aws/_ec2
+  - scope:
+      path: ""
+      type: ec2
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "aws"
 
   # _language/_tips
   - scope:

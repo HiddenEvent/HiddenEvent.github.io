@@ -1,5 +1,7 @@
 # main links
 main:
+  - title: "AWS"
+    url: /aws/
   - title: "App & WEB"
     url: /language/
   - title: "Database"
@@ -14,6 +16,10 @@ main:
   #   url: /blog/
 
 # side navigation links
+aws :
+  - title: "EC2 & RDS"
+    url: /ec2/
+
 language :
   - title: "Kotlin"
     url: /kotlin/
