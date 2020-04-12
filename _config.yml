@@ -286,10 +286,15 @@ collections_dir: all_collections
 collections:
   all_collections:
     output: true
-  #language
+  #서버
   ec2:
     output: true
     permalink: /aws/:collection/:title
+  docker:
+    output: true
+    permalink: /aws/:collection/:title
+
+  #language
   kotlin:
     output: true
     permalink: /language/:collection/:title
@@ -342,6 +347,22 @@ defaults:
       comments: true
       share: true
       related: true
+
+  # _aws/_docker
+  - scope:
+      path: ""
+      type: docker
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "aws"
 
   # _aws/_ec2
   - scope:
