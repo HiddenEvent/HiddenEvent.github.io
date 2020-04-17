@@ -6,7 +6,7 @@ categories:
 tags:
   - Machine
   - 머신러닝
-last_modified_at: 2020-04-04
+last_modified_at: 2020-04-17
 ---
 
 ## 1. 다중 선형회귀
@@ -104,4 +104,3 @@ for i in range(n_epochs+1):
   - weight 갯수 만큼 업데이트 
 
 - 성능도 marix를 쓰는게 훨씬 빠르다.
-
