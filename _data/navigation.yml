@@ -37,7 +37,7 @@ language :
   - title: "구름IDE"
     url: /groom/
 algorithm:
-  - title: "알고리즘"
+  - title: "파이썬 알고리즘 풀기"
     url: /al_kotlin/
   - title: "수학"
     url: /math/
