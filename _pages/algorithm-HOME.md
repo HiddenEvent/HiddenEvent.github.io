@@ -28,4 +28,4 @@ sidebar:
   - 모든 명령은 컴퓨터에서 수행 가능해야 함
 
 ## 알고리즘 관련 공부내용 정리
-[1. 알고리즘 소개](/algorithm/01_Introduction)
+[1. 알고리즘 설계](/algorithm/01_Introduction)
