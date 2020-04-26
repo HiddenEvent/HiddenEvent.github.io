@@ -29,3 +29,5 @@ sidebar:
 
 ## 알고리즘 관련 공부내용 정리
 [1. 알고리즘 설계](/algorithm/01_Introduction)
+
+[2. 분할정복 알고리즘](/algorithm/02_Division)
