@@ -48,6 +48,39 @@ sidebar:
 ### 분할 정복 방법을 적용하면(순환 형태의 알고리즘)
 - 소문제가 독립이 아니기 떄문에 중복된 계산이 필요하다 ( 매우 비효율적)
 
+### 성능 
+- O(n)
+
+### 파이썬 코드로 피보나치 수열
+~~~python
+# 피보나치 수열 알고리즘
+
+fibo_num = 6
+
+def Fibo(n):
+    f = [0, 1] # 초기값 세팅
+    
+    for i in range(2,n):
+        add_int = f[i-1] + f[i-2]
+        f.append(add_int)
+    return f
+result = Fibo(fibo_num)
+# print(sum(result))
+
+## 순환형태(재귀함수)로 만든다면..
+# fib(1) = 1, fib(2) = 1, fib(3) = 2
+# fib (6) = fib(5) + fib(4)
+# fib (5) = fib(4) + fib(3)
+# ...
+# 재귀를 형태를 사용하면 팩토리얼 연산이 된다
+# 정말 느리다 이건 절대 사용하지 말자...
+def fib(n):
+    if n <= 1 : return n
+    else: return(fib(n-1)+fib(n-2))
+result = fib(fibo_num)
+print(result)
+~~~
+
 
 ## 2. 연쇄 행렬 곱셈 문제
 - 결합 법칙 성립
@@ -61,3 +94,30 @@ sidebar:
 - n개의 행렬 M_i(d_i-1  +  d_i 차원) ( 1 <= i <= n ) 
 
 ### 성능 
+- O(n^3)
+
+### 파이썬 코드로 연쇄 행렬 곱셈 구현
+~~~python
+# 연쇄 행렬 곱셈
+
+## 행렬의 갯수 별 경우의 수 구하기 => (n-1)의 팩토리얼
+# 3개의 행렬 => 2가지
+# 4개의 행렬 => 처음 3가지 * 2가지
+# 5개의 행렬 => 4 * 3 * 2
+# n개의 행렬 => (n-1)!
+# 결론 적으로 경우의 수는(n-1)의 팩토리얼 개이다.
+import sys
+N = 4
+d = [10, 30, 5, 60]
+M = [[0 for x in range(N)] for y in range(N)]
+
+for diag in range(1, N):
+    for i in range(1, N - diag):
+        j = i + diag
+        M[i][j] = sys.maxsize
+        for k in range(i, j):
+            M[i][j] = min(M[i][j],
+                          M[i][k] + M[k + 1][j] + d[i - 1] * d[k] * d[j])
+
+print(M[1][N-1])
+~~~
