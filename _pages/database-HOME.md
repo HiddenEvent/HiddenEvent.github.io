@@ -15,3 +15,6 @@ sidebar:
 
 ## 데이터베이스 학습 목차
 [1. 데이터베이스 모델링](/database/01_Introduction)
+
+[2. 관계형 모델](/database/02_ERdiagram)
+
