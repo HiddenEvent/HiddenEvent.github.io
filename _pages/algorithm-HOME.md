@@ -6,6 +6,16 @@ collection: algorithm
 sidebar:
   nav: "algorithm"
 ---
+## 알고리즘 목차
+[1. 알고리즘 설계](/algorithm/01_Introduction)
+
+[2. 분할정복 알고리즘](/algorithm/02_Division)
+
+[3. 동적프로그래밍](/algorithm/03_DynamicProgramming)
+
+[4. 욕심쟁이 방법](/algorithm/04_greedy)
+
+
 ## 학습 개요
  알고리즘의 정의와 특성을 살펴보고, 앞으로 다룰 다양한 알고리즘의 이해와 구현을 위해서 필요한    
  기본적인 자료구조인 배열, 연결 리스트, 스택, 큐, 트리, 그래프에 대해서 학습한다.
@@ -27,9 +37,4 @@ sidebar:
 4. 유효성
   - 모든 명령은 컴퓨터에서 수행 가능해야 함
 
-## 알고리즘 관련 공부내용 정리
-[1. 알고리즘 설계](/algorithm/01_Introduction)
 
-[2. 분할정복 알고리즘](/algorithm/02_Division)
-
-[3. 동적프로그래밍](/algorithm/03_DynamicProgramming)
