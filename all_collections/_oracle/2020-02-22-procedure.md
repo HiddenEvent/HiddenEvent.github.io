@@ -1,8 +1,8 @@
 ---
-title : "프로시저"
+title : "pl/sql 프로시저"
 toc: true
 toc_sticky: true
-toc_label: "<a href='/database/oracle/'>프로시저</a>"
+toc_label: "<a href='/database/oracle/'>홈으로 이동</a>"
 categories:
   - oracle
 tags:
