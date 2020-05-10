@@ -1,5 +1,5 @@
 ---
-title: "(linux)리눅스 필수개념"
+title: "(linux) 프로세스 / 데몬 개념"
 permalink: aws/03_process
 toc_label: "<a href='/aws/'>서버 홈 이동 Click</a>"
 layout: single
