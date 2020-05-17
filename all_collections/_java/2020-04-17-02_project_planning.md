@@ -1,5 +1,5 @@
 ---
-title: (spring) 2. 프로젝트 기획
+title: (spring) 스크럼 개발방법론
 excerpt: "기획안 정리"
 categories:
   - Spring 
