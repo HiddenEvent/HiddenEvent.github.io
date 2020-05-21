@@ -9,6 +9,8 @@
 ## 이미지 팝업 설정 하는 방법
 <https://imyeonn.github.io/blog/blog/206/>
 
+## 깃 블로그 이모지 사용하는 사이트
+<https://kr.piliapp.com/twitter-symbols/>
 # 플루터
 
 ## dart 홈페이지
