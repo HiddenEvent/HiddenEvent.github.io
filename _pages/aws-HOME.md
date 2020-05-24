@@ -29,4 +29,6 @@ taxonomy: aws
 
 [2. 서버 구축전 알아야 내용](/aws/06_SettingStep2)
 
-[3. 랜카드 활성화, putty 접속](/aws/07_putty)
+[3. putty 접속](/aws/07_putty)
+
+[4. nginx 최신버전, 고정IP, systemctl, wget](/aws/08_IP_nginx)

@@ -73,6 +73,8 @@ sidebar:
 2. `sudo ifup [랜카드 명]` : if(인터페이스)up(켜겠다) enp0s3(랜카드 장비명)
 3. `sudo vim /etc/sysconfig/network-scripts/ifcfg-enp0s3` : 랜카드 관련 설정 파일 이다, `ONBOOT=no` => `ONBOOT=yes`로 바꾸어 줘야 재부팅 할때 마다 다시 랜카드를 연결할 필요가 없어지게 된다.
 
+> 이후 작업은[putty 접속](/aws/07_putty)하여 설정 하는게 가장 편함
+
 ## 3. SELINUX 끄기
 **- SELINUX는 보안프로그램으로, 프로그램을 설치할 때 방해를 하기 때문에 초기 세팅때는 꺼주어야 한다.**
 
@@ -89,13 +91,8 @@ shutdown now(수동)/reboot now(자동 리부팅 오류 자주남)
 ## 5. Linux 프로그램 설치
 **- `sudo yum install [프로그램명]` : 리눅스 프로그램 설치 명령어**   
 
-### 5-1 nginx 설치
-- `sudo yum install nginx` : nginx 설치
-- `sudo systemctl status nginx` : nginx 켜져있는지 상태확인 명령
-- `sudo systemctl start nginx` : nginx 켜는 명령어
 
-
-
+```
 ### 방화벽 끄기 및 ip 설정
 - `systemctl stop firewalld`: 일시적으로 적용
 - `systemctl disable firewalld`: 재부팅시에도 변경사항 적용됨
@@ -106,8 +103,4 @@ shutdown now(수동)/reboot now(자동 리부팅 오류 자주남)
   + `ONBOOT=yes` => 로 수정 (부팅시 자동설정)
 - `ip route` : 게이트웨이 ip 확인하는 방법
 - 머신 설정 -> 네트워크 -> 어댑터 1 -> 고급 -> 포트포워딩 -> 추가 -> 호스트 IP `내아이피` 포트 22 / 게스트 IP `10.0.2.15` 포트 22
-
-### epel-release yum 리포지터리 추가
-- `yum install epel-release` (yum은 패키지(프로그램) 매니저)
-
-
+```
