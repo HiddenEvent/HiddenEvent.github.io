@@ -56,19 +56,45 @@ sidebar:
 - 계정 생성을 하는 이유는 root 계정은 정말 위급할 때만 사용.
 - root계정을 자주 접속하면 보안에 취약하다.
 - 그래서 대부분의 작업은 마스터 계정을 사용해서만 작업을 한다.
-- 작업순서
-  + `adduser 유저네임` : 유저 생성 (/home/ 디렉터리 밑에 폴더 생김)
-  + `passwd 유저네임` : 유저 패스워드 설정
-  + `vim /etc/sudoers` : sudo 명령어를 사용할 수 있는 회원목록에 마스터 유저 넣기
-    * root ALL=(ALL) ALL # 밑에
-    * sbsst ALL=(ALL) ALL # 추가(sbsst라는 이름의 사용자에게 root와 같은 권한 부여)
-    * 저장시 꼭 wq! 로 저장(read only file / 읽기 전용 파일이기 때문)
 
-### SELINUX 끄기
-- `vim /etc/selinux/config`
-- `SELINUX=disabled`
-- `reboot`
+### 설정방법
+1. `adduser 유저네임` : 유저 생성 (/home/ 디렉터리 밑에 폴더 생김)
+2. `passwd 유저네임` : 유저 패스워드 설정
+3. `sudo vim /etc/sudoers` : sudo 명령어를 사용할 수 있는 회원목록에 마스터 유저 넣기
+  * root ALL=(ALL) ALL # 밑에
+  * sbsst ALL=(ALL) ALL # 추가(sbsst라는 이름의 사용자에게 root와 같은 권한 부여)
+  * 저장시 꼭 wq! 로 저장(read only file / 읽기 전용 파일이기 때문)
+
+## 2. 랜카드 활성화
+**- 처음 Centos를 설치하게 되면 아무것도 연결이 안된 깡통이다.**    
+**- 이 인터넷을 연결하려면 설정을 잡아줘야한다.**   
+### 설정 방법
+1. `ip addr` : 렌카드 종류 확인, lo(루프백은 무시하면 됨)
+2. `sudo ifup [랜카드 명]` : if(인터페이스)up(켜겠다) enp0s3(랜카드 장비명)
+3. `sudo vim /etc/sysconfig/network-scripts/ifcfg-enp0s3` : 랜카드 관련 설정 파일 이다, `ONBOOT=no` => `ONBOOT=yes`로 바꾸어 줘야 재부팅 할때 마다 다시 랜카드를 연결할 필요가 없어지게 된다.
+
+## 3. SELINUX 끄기
+**- SELINUX는 보안프로그램으로, 프로그램을 설치할 때 방해를 하기 때문에 초기 세팅때는 꺼주어야 한다.**
+
+### 설정방법
+1. `sudo vim /etc/selinux/config` : selinux 설정 파일 수정, `SELINUX=disabled` 변경 후 저장
+3. `reboot`
 shutdown now(수동)/reboot now(자동 리부팅 오류 자주남)
+
+## 4. yum 업데이트
+**- Centos를 처음 설치하고 1번만 업데이트 설정해주면 된다.**   
+- `sudo yum update -y`
+- `sudo yum install epel-release` : yum 자체를 업그레이드 시킴
+
+## 5. Linux 프로그램 설치
+**- `sudo yum install [프로그램명]` : 리눅스 프로그램 설치 명령어**   
+
+### 5-1 nginx 설치
+- `sudo yum install nginx` : nginx 설치
+- `sudo systemctl status nginx` : nginx 켜져있는지 상태확인 명령
+- `sudo systemctl start nginx` : nginx 켜는 명령어
+
+
 
 ### 방화벽 끄기 및 ip 설정
 - `systemctl stop firewalld`: 일시적으로 적용
@@ -84,10 +110,4 @@ shutdown now(수동)/reboot now(자동 리부팅 오류 자주남)
 ### epel-release yum 리포지터리 추가
 - `yum install epel-release` (yum은 패키지(프로그램) 매니저)
 
-### 프로그램들 업데이트
-- `yum update -y`
 
-# Linux 프로그램 설치
-- `sudo yum install [프로그램명]` 리눅스 프로그램 설치 명령어
-
-## nginx 설치

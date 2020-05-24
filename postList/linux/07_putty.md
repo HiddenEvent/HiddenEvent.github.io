@@ -1,5 +1,5 @@
 ---
-title: "(linux) 랜카드 활성화, putty 접속"
+title: "(linux) putty 접속"
 permalink: aws/07_putty
 toc_label: "<a href='/aws/'>서버 홈 이동 Click</a>"
 layout: single
@@ -14,14 +14,6 @@ sidebar:
   nav: "aws"
 ---
 [서버 홈바로가기](../aws)
-
-# 랜카드 활성화
-- 처음 Centos를 설치하게 되면 아무것도 연결이 안된 깡통이다.
-- 이 인터넷을 연결하려면 설정을 잡아줘야한다.
-
-## 설정 방법
-- `ip addr` : 렌카드 종류 확인, lo(루프백은 무시하면 됨)
-- `sudo ifup [랜카드 명]` : if(인터페이스)up(켜겠다) enp0s3(랜카드 장비명)
 
 # Putty 사용
 **- putty를 사용하는 이유?**
