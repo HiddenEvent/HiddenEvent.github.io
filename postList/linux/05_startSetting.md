@@ -1,5 +1,5 @@
 ---
-title: "(linux)리눅스 초기 세팅"
+title: "(linux)리눅스 서버 환경 구성"
 permalink: aws/05_startSetting
 toc_label: "<a href='/aws/'>서버 홈 이동 Click</a>"
 layout: single
@@ -15,6 +15,7 @@ sidebar:
 ---
 [서버 홈바로가기](../aws)
 
+# Windows 프로그램 설치
 ## 1. Filezila(client)
 [설치 경로](https://filezilla-project.org/download.php?type=client)
 - 일반버전 설치(PRO 버전 X)
@@ -50,7 +51,19 @@ sidebar:
 - ※ cpu의 vitualization을 enable로 설정해줘야 한다.(오류시 확인)※
 
 
-## 리눅스 초기 설정
+# 리눅스 초기 설정
+## 1. 계정 생성 및 권한 부여
+- 계정 생성을 하는 이유는 root 계정은 정말 위급할 때만 사용.
+- root계정을 자주 접속하면 보안에 취약하다.
+- 그래서 대부분의 작업은 마스터 계정을 사용해서만 작업을 한다.
+- 작업순서
+  + `adduser 유저네임` : 유저 생성 (/home/ 디렉터리 밑에 폴더 생김)
+  + `passwd 유저네임` : 유저 패스워드 설정
+  + `vim /etc/sudoers` : sudo 명령어를 사용할 수 있는 회원목록에 마스터 유저 넣기
+    * root ALL=(ALL) ALL # 밑에
+    * sbsst ALL=(ALL) ALL # 추가(sbsst라는 이름의 사용자에게 root와 같은 권한 부여)
+    * 저장시 꼭 wq! 로 저장(read only file / 읽기 전용 파일이기 때문)
+
 ### SELINUX 끄기
 - `vim /etc/selinux/config`
 - `SELINUX=disabled`
@@ -58,14 +71,14 @@ sidebar:
 shutdown now(수동)/reboot now(자동 리부팅 오류 자주남)
 
 ### 방화벽 끄기 및 ip 설정
-- `systemctl stop firewalld` (일시적으로 적용)
-- `systemctl disable firewalld`  (재부팅시에도 변경사항 적용됨)
-- `ip addr` ip 확인
-- `ifup enp0s3` 네트워크 카드(랜카드) enp0s3 활성화
-- `systemctl restart network` 네트워크 설정 변경 후 적용하는 명령어
-- `vim /etc/sysconfig/network-scripts/ifcfg-enp0s3` 영구적으로 enp0s3 활성화
-  + `ONBOOT=yes` 로 수정 (부팅시 자동설정)
-- `ip route`게이트웨이 ip 확인하는 방법
+- `systemctl stop firewalld`: 일시적으로 적용
+- `systemctl disable firewalld`: 재부팅시에도 변경사항 적용됨
+- `ip addr` : ip 확인
+- `ifup enp0s3` : 네트워크 카드(랜카드) enp0s3 활성화
+- `systemctl restart network` : 네트워크 설정 변경 후 적용하는 명령어
+- `vim /etc/sysconfig/network-scripts/ifcfg-enp0s3` : 영구적으로 enp0s3 활성화
+  + `ONBOOT=yes` => 로 수정 (부팅시 자동설정)
+- `ip route` : 게이트웨이 ip 확인하는 방법
 - 머신 설정 -> 네트워크 -> 어댑터 1 -> 고급 -> 포트포워딩 -> 추가 -> 호스트 IP `내아이피` 포트 22 / 게스트 IP `10.0.2.15` 포트 22
 
 ### epel-release yum 리포지터리 추가
@@ -74,8 +87,7 @@ shutdown now(수동)/reboot now(자동 리부팅 오류 자주남)
 ### 프로그램들 업데이트
 - `yum update -y`
 
-### 관리자 권한주기(sudo 권한 주기)
-- `vim /etc/sudoers`
-  + root ALL=(ALL) ALL # 밑에
-  + sbsst ALL=(ALL) ALL # 추가(sbsst라는 이름의 사용자에게 root와 같은 권한 부여)
-  + 저장시 꼭 wq! 로 저장(read only file / 읽기 전용 파일이기 때문)
+# Linux 프로그램 설치
+- `sudo yum install [프로그램명]` 리눅스 프로그램 설치 명령어
+
+## nginx 설치
