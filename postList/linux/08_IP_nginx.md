@@ -30,7 +30,12 @@ sidebar:
 - `systemctl restart network`: 수정된 네트워크 반영 작업
 - `systemctl status network` : 네트워크 잘 작동하는지 확인
 
-# nginx 설치 및 구동
+# nginx
+## nginx를 사용하는 이유?
+- PC의 자원을 외부와 공유하기 위해서
+- 다른 손님(client) 들은 웹 브라우저를 사용해서 우리 서버에 접근한다
+
+## nginx 설치
 - `sudo yum install nginx` : nginx 설치
 - `sudo systemctl status nginx` : nginx 켜져있는지 상태확인 명령
 - `sudo systemctl start nginx` : nginx 켜는 명령어
