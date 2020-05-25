@@ -93,14 +93,8 @@ shutdown now(수동)/reboot now(자동 리부팅 오류 자주남)
 
 
 ```
-### 방화벽 끄기 및 ip 설정
+### 방화벽 끄기
+**- 방화벽을 끄는 이유는 리눅스는 22번 포트를 제외하고 모든 포트를 방화벽이 막아 놓기 때문에 외부에서 접속하려면 방화벽을 내려야 한다..**
 - `systemctl stop firewalld`: 일시적으로 적용
 - `systemctl disable firewalld`: 재부팅시에도 변경사항 적용됨
-- `ip addr` : ip 확인
-- `ifup enp0s3` : 네트워크 카드(랜카드) enp0s3 활성화
-- `systemctl restart network` : 네트워크 설정 변경 후 적용하는 명령어
-- `vim /etc/sysconfig/network-scripts/ifcfg-enp0s3` : 영구적으로 enp0s3 활성화
-  + `ONBOOT=yes` => 로 수정 (부팅시 자동설정)
-- `ip route` : 게이트웨이 ip 확인하는 방법
-- 머신 설정 -> 네트워크 -> 어댑터 1 -> 고급 -> 포트포워딩 -> 추가 -> 호스트 IP `내아이피` 포트 22 / 게스트 IP `10.0.2.15` 포트 22
 ```

@@ -24,7 +24,7 @@ taxonomy: aws
 
 [5. 응급 복구](/aws/04_restore)
 
-## 리눅스 서버 구축 (Centos6)
+## 리눅스 서버 구축 (Centos7)
 [1. 리눅스 서버 환경 구성 및 초기세팅](/aws/05_startSetting)
 
 [2. 서버 구축전 알아야 내용](/aws/06_SettingStep2)
@@ -32,3 +32,5 @@ taxonomy: aws
 [3. putty 접속](/aws/07_putty)
 
 [4. nginx 최신버전, 고정IP, systemctl, wget](/aws/08_IP_nginx)
+
+[5. mlocate 사용법](/aws/09_mlocate)

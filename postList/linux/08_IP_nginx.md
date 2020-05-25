@@ -69,7 +69,6 @@ sidebar:
 - 이제 내 windows 컴퓨터로 돌아와서 웹브라우저를 키고 `127.0.0.1:8081`을 입력 하면 nginx가 구동된 것을 확인 할 수 있다!!
 - `cd /usr/share/nginx/html/`: 최초 nginx `indx.html`이 있는 위치이다.
 
-
 # wget
 **- window의 웹 브라우저를 통해서 웹서버로 접속하는 기능과 같다고 보면 됨**
 - `wget https://www.naver.com` : 네이버의 index.html을 다운받아서 볼수 있음
