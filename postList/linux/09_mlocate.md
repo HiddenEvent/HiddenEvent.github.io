@@ -40,8 +40,8 @@ sidebar:
 4. 프로토콜 => SFTP(SSH)
 5. 비밀번호 묻기로 ㄱㄱ
 
-## editPlus SFTP 설정하기
-**-editPlus를 SFTP로 연결해 놓으면 수정한 내용이 바로바로 리눅스에 적용된다!!**
+## EditPlus SFTP 설정하기
+**- EditPlus를 SFTP로 연결해 놓으면 수정한 내용이 바로바로 리눅스에 적용된다!!**
 
 ![상단메뉴 => 파일 => FTP => FTP 설정 => 추가](/assets/img/common/2020-05-26-00-56-29.png)
 

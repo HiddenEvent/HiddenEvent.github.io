@@ -318,6 +318,9 @@ collections:
   machineLearning:
     output: true
     permalink: /language/:collection/:title
+  webFront:
+    output: true
+    permalink: /language/:collection/:title
 
 
   #database
@@ -405,6 +408,24 @@ defaults:
   - scope:
       path: ""
       type: java 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "language"
+
+        
+
+ # _language/_webFront
+  - scope:
+      path: ""
+      type: webFront
     values:
       layout: single
       comments: true

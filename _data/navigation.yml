@@ -28,12 +28,14 @@ language :
     url: /kotlinApp/
   - title: "Flutter"
     url: /flutter/
+  - title: "WEB_프론트엔드"
+    url: /webFront/
+  - title: "spring"
+    url: /java/
   - title: "node.js"
     url: /nodejs/
   - title: "머신러닝"
     url: /machineLearning/
-  - title: "spring"
-    url: /java/
   - title: "구름IDE"
     url: /groom/
 algorithm:

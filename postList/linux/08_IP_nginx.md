@@ -74,7 +74,44 @@ sidebar:
 - 이제 내 windows 컴퓨터로 돌아와서 웹브라우저를 키고 `127.0.0.1:8081`을 입력 하면 nginx가 구동된 것을 확인 할 수 있다!!
 - `cd /usr/share/nginx/html/`: 최초 nginx `indx.html`이 있는 위치이다.
 
+## nginx 다중 서버 포트 생성
+**- HTTP 80 포트 말고도 다른 포트를 추가로 생성 할 때 설정한다.**
+- `sudo vim /etc/nginx/nginx.conf`: nginx 설정파일/ conf.d/ 하위 경로를 다 불러오는 설정을 하는 것을 확인 할 수 있다.
+- `sudo vim /etc/nginx/conf.d/virtual.conf`: conf.d 경로 밑에 virtual.conf를 만들어 새로운 서버 설정을 할 수 있다.
+
+```php
+# virtual.conf 설정 방법
+# A 라는 서버 설정
+server {
+        listen 8888;
+        server_name _;
+        root /web/site1/public;
+}
+
+
+# B 라는 서버설정
+server {
+        listen 8889;
+        server_name _;
+        root /web/site2/public;
+}
+
+```
+
+- `sudo systemctl restart nginx` : nginx 재부팅을 해주어야 설정을 잡을수 있다.
+- `sudo mkdir /web/site1/public -p` : server root 경로로 지정해준 site1 폴더 생성 
+- `sudo mkdir /web/site2/public -p` : server root 경로로 지정해준 site2 폴더 생성
+- 테스트용 index.html 생성
+  + `echo "<h1>site1 테스트용 html 생성</h1>" > /web/site1/public/index.html`
+  + `echo "<h1>site2 테스트용 html 생성</h1>" > /web/site2/public/index.html`
+- `sudo netstat -nlp | fgrep nginx` : nginx와 관련된 내용이 나온다.
+- `systemctl stop firewalld`: 방화벽을 내려줘야 외부에서 접속 가능.
+- 포트포워딩 해주어야 한다. 8888, 8889 두개 모두 해줘야한다!
+
+
+
 # wget
 **- window의 웹 브라우저를 통해서 웹서버로 접속하는 기능과 같다고 보면 됨**
 - `wget https://www.naver.com` : 네이버의 index.html을 다운받아서 볼수 있음
 - `wget 127.0.0.1` : 서버에서 nginx를 구동중인 경우 index.html을 받을 수 있음.
+
