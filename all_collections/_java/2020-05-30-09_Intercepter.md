@@ -1,6 +1,6 @@
 ---
-title: (spring) 인터셉터
-excerpt: "인터셉터를 사용하는 이유 및 개념"
+title: (spring) 인터셉터 / 날짜형식 변환
+excerpt: "인터셉터를 사용하는 이유 및 개념 / 날짜 형식 변환"
 categories:
   - Spring 
 tags:
@@ -24,25 +24,40 @@ last_modified_at: 2020-05-30
 - 로그인된 사용자인지 등의 공통된 작업을 처리하기 위해 인터셉터를 사용한다.
 
 ## 📝 인터셉터 예제
-1. web.xml에서 한글 깨짐 현상을 제어하기 위한 설정
 
+**xml로 설정 예제**
 ```xml
-	<filter>
-		<filter-name>encodingFilter</filter-name>
-		<filter-class>
-			org.springframework.web.filter.CharacterEncodingFilter
-		</filter-class>
-		<init-param>
-			<param-name>encoding</param-name>
-			<param-value>UTF-8</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>encodingFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	<interceptors>
+		<interceptor>
+			<mapping path="/edit/**" />
+			<exclude-mapping path="/edit/help/**" />
+			<beans:bean class="interceptor.AuthCheckInterceptor" />
+		</interceptor>
+	</interceptors>
 ```
-2. 세션과 쿠키도 여기서 사용됨
+**java class로 설정한 예제**
+```java
+public class AuthCheckInterceptor implements HandlerInterceptor {
+
+	@Override
+	public boolean preHandle(
+			HttpServletRequest request,
+			HttpServletResponse response,
+			Object handler) 
+					throws Exception {
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			Object authInfo = session.getAttribute("authInfo");
+			if (authInfo != null) {
+				return true;
+			}
+		}
+		response.sendRedirect(request.getContextPath() + "/login");
+		return false;
+	}
+	
+}
+```
 
 ## 📝필터 vs 인터셉터
 
@@ -56,7 +71,7 @@ last_modified_at: 2020-05-30
   - date객체를 Controller에 요청될 때 변환과정이 없으면 에러남
 
 ```java
-// 객체 안에 date 타입의 객체가 있는 경우 사용
+// 객체 안에 date 타입의 데이터가 있는 경우 사용
 @DateTimeFormat(pattern = "yyyyMMddHH")
 private LocalDateTime from;
 ```
