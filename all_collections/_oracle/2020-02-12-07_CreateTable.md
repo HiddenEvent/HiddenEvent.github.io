@@ -1,5 +1,5 @@
 ---
-title : "테이블 생성/복사/삭제 관련 문법"
+title : "테이블 생성/복사/삭제 및 임시테이블 생성 등"
 toc: true
 toc_sticky: true
 toc_label: "<a href='/database/oracle/'>Oracle 홈이동</a>"
@@ -92,4 +92,58 @@ INSERT INTO t_readonly values(1,'aaa');
 commit;
 
 ALTER TABLE t_readonly read only; --읽기 전용으로 바꿈
+~~~
+
+# 💼 임시 테이블
+- 메모리에서 작업되기 때문에 빠르다
+- COMMIT하면 사라짐
+
+## 📝 임시 테이블 생성
+~~~sql
+CREATE GLOBAL TEMPORARY TABLE temp01
+(
+    no number,
+    name varchar2(10)
+)
+ON COMMIT DELETE ROWS;
+
+INSERT INTO temp01 VALUES(1,'AAA');
+
+SELECT * FROM temp01;
+commit; 
+
+CREATE GLOBAL TEMPORARY TABLE temp03
+    AS
+    SELECT dcode, dname
+    FROM dept2;
+
+-- 가상 컬럼 테이블 생성하기 11g 버전이상
+CREATE TABLE vt001(
+  no1 number,
+  no2 number,
+  no3 number GENERATED ALWAYS AS ((no11*12)+12) 
+); 
+-- 가상 컬럼 에는 자동으로 데이터가 부여된다. 직접 데이터를 넣는건 불가능 하다
+--가상과 디폴트의 차이
+    -- 디폴트는 직접 데이터를 넣는게 가능
+    -- 가상 컬럼은 직접 데이터 넣는게 불가능
+
+~~~
+
+# 💼 컬럼 제어문
+~~~sql
+-- 컬럼 삭제;
+ALTER TABLE dept7 DROP COLUMN loc;
+ALTER TABLE dept7 DROP COLUMN loc CASCADE CONSTRAINTS;
+
+-- 컬럼의 데이터 형식 변경
+ALTER TABLE dept7 MODIFY (addr NVARCHAR2(10) NULL);
+
+-- 새로운 컬럼을 추가하기
+ALTER TABLE dept6
+    ADD (LOC VARCHAR2(10));
+    
+-- 새로운 컬럼을 추가하면서 디폴트값 주기
+ALTER TABLE dept6
+    ADD (LOC2 VARCHAR2(10), 'seoul');
 ~~~
