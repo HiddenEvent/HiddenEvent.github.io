@@ -47,3 +47,16 @@ AlertDialog객체와 Builder 객체의 관계를 설명하시오.
 - Builder 객체를 생성한 후에 Builder 객체의 메소드(setMessage, setTitle, setIcon)를 통해 AlertDialog의 여러 가지 설정을 정의한다.
 - `create() 메소드` :  Builder 객체의 create 메소드는 AlertDialog를 생성(메모리에 올리는 것)만 하고 화면으로 출력하지는 않는다.
 - `show() 메소드` : show 메소드를 통해서 화면에 나타나게 된다.
+
+# 💼 Builder 호출 및 반환
+- new AlertDialog.Builder는 Context객체를 생성자 매개변수로 받는다.
+- Activity는 Context를 상속하고 있으므로 자기 자신이 객체를 넣는다.
+- Builder 객체의 생성자와 속성에 관한 설정 메소드들은 모두 Builder 객체, 자체를 반환한다.
+- Builder 객체의 생성 후, 별도의 메소드 호출문을 따로 작성할 필요없이 반환되는 Builder 객체에 대한 메소드들을 연쇄적으로 호출해도 상관없음
+- Builder 객체에 별도의 이름을 줄 필요도 없고 순서대로 메소드를 호출함
+- new 연산자는 Builder를 생성하며, AlertDialog는 최종적으로 호출되는 show 메소드에 의해 생성되어 화면에 보인다.
+
+# 💼 AlertDialog객체와 Builder 객체의 관계에 대한 정리
+Builder객체의 속성에 관한 설정 메소드들은 반환되는 값들이 모두 Builder객체이기에 AlertDialog를 보여주기위 한 모든 속성들을 정의 해주는 역할을 한다고 생각하면 된다.
+다 정의한 후에는 AlertDialog는 최종적으로 show 메소드에 의해 생성이 되며 화면에 보여지게 되는데, 이때 메모리에 아무것도 남지 않고 AlertDialog만 남게 된다. 
+왜냐하면 show메소드는 AlertDialog를 뿌려주려고 하는 과정에서 AlertDialog가 없는 경우 자동으로 create 메소드를 통해서 생성하게 된다.
