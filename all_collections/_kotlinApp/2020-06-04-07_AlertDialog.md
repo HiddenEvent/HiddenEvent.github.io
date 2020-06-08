@@ -28,7 +28,7 @@ AlertDialog객체와 Builder 객체의 관계를 설명하시오.
 
 
 ## 📝 Dialog의 종류
-- `AlertDialog ` : 0~3개의 버튼 및 체크박스나 라이도 버튼을 가지는 다이얼로그이며, 가장 대표적인 다이얼로그임
+- `AlertDialog` : 0~3개의 버튼 및 체크박스나 라이도 버튼을 가지는 다이얼로그이며, 가장 대표적인 다이얼로그임
 - `ProgressDialog` : AlertDialog의 하위클래스이며, 서비스의 진행을 확인하는데 사용됨
 - `DataPickerDialog` : 날짜를 선택할 수 있음
 - `TimePickerDialog` : 시간을 선택할 수 있음
