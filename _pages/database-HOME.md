@@ -21,3 +21,5 @@ sidebar:
 [3. SQL개념(1)](/database/03_SQL1)
 
 [4. SQL개념, 서브쿼리](/database/04_SQL2)
+
+[5. 파일의 구조화](/database/05_fileStructure)
