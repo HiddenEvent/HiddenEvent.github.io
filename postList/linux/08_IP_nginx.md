@@ -15,7 +15,9 @@ sidebar:
 ---
 [서버 홈바로가기](../aws)
 
-# IP 고정 설정
+💼📝🔑⏰ 📙📓📘📒🎓
+
+# 💼 IP 고정 설정
 **- 고정 IP를 설정해야하는 이유는 접속할 떄마다 설정을 변경해야되기 떄문에 고정 IP를 설정해 놓아야한다.**
 - `sudo vim /etc/sysconfig/network-scripts/ifcfg-enp0s3` : 랜카드 설정 파일 열기
   1. `BOOTPROTO=static` : 부트프로토콜을 static으로 변경
@@ -30,18 +32,18 @@ sidebar:
 - `systemctl restart network`: 수정된 네트워크 반영 작업
 - `systemctl status network` : 네트워크 잘 작동하는지 확인
 
-# nginx
-## nginx를 사용하는 이유?
+# 💼 nginx
+## 📝 nginx를 사용하는 이유?
 - PC의 자원을 외부와 공유하기 위해서
 - 다른 손님(client) 들은 웹 브라우저를 사용해서 우리 서버에 접근한다
 
-## nginx 설치
+## 📝 nginx 설치
 - `sudo yum install nginx` : nginx 설치
 - `sudo systemctl status nginx` : nginx 켜져있는지 상태확인 명령
 - `sudo systemctl start nginx` : nginx 켜는 명령어
 - `sudo systemctl stop nginx` : nginx 끄는 명령어 
 
-## nginx가 종료되지 않는 경우
+## 📝 nginx가 종료되지 않는 경우
 **1) 첫번째 방법 stop 보단 kill을 사용하자**   
 
 **2) 두번째 방법!!**   
@@ -63,7 +65,7 @@ sidebar:
 - `yum remove nginx` : 삭제
 - `yum install nginx` : 다시 설치
 
-## nginx 포트포워딩
+## 📝 nginx 포트포워딩
 - `sudo netstat -nlp | fgrep nginx`: 최초 HTTP 기본포트인 80 포트 로 설정되 있음
 - VirtualBOX에서 HTTP포트포워딩 설정   
 
@@ -74,7 +76,7 @@ sidebar:
 - 이제 내 windows 컴퓨터로 돌아와서 웹브라우저를 키고 `127.0.0.1:8081`을 입력 하면 nginx가 구동된 것을 확인 할 수 있다!!
 - `cd /usr/share/nginx/html/`: 최초 nginx `indx.html`이 있는 위치이다.
 
-## nginx 다중 서버 포트 생성
+## 📝 nginx 다중 서버 포트 생성
 **- HTTP 80 포트 말고도 다른 포트를 추가로 생성 할 때 설정한다.**
 - `sudo vim /etc/nginx/nginx.conf`: nginx 설정파일/ conf.d/ 하위 경로를 다 불러오는 설정을 하는 것을 확인 할 수 있다.
 - `sudo vim /etc/nginx/conf.d/virtual.conf`: conf.d 경로 밑에 virtual.conf를 만들어 새로운 서버 설정을 할 수 있다.
@@ -109,9 +111,30 @@ server {
 - 포트포워딩 해주어야 한다. 8888, 8889 두개 모두 해줘야한다!
 
 
+# 💼 폴더 권한 설정
+**폴더 권한 설정이 왜 필요한가?**
+- 만약 내가 친구 20명에게 내 서버(Centos7) 컴퓨터로 nginx서버 20개를 만들어 각각 웹서비스를 대신 올려준다고 가정하자.
+- 나는 20명의 친구들에게 각각 수정사항을 반영하려면 직접 수정 반영을 해주어야 하는데
+- 이를 방지하기 위해 친구들에게 FTP 접속 권한을 주면 해결된다.
+- 하지만 그 친구들이 자신의 파일을 수정하는게 아니라 다른 친구의 폴더를 수정할 수도 있기 때문에
+- 각 20개의 폴더에 대한 권한을 설정해주어야 한다.
 
-# wget
+## 📝 계정 추가 및 폴더 권한 설정 예
+1. 친구 20명에게 각각 계정을 생성해준다.
+2. 각 계정마다 폴더를 기준으로 권한 주면된다.
+
+
+# 💼 wget
 **- window의 웹 브라우저를 통해서 웹서버로 접속하는 기능과 같다고 보면 됨**
 - `wget https://www.naver.com` : 네이버의 index.html을 다운받아서 볼수 있음
 - `wget 127.0.0.1` : 서버에서 nginx를 구동중인 경우 index.html을 받을 수 있음.
+  + 내가 서버를 올리고 잘 올라가 있는지 테스트할때도 사용한다.
+-  `sudo systemctl enable nginx` : nginx 항상켜지게 설정
 
+
+# 💼 nginx 구동시 에러가 날 경우
+- `sudo ps -aux | fgrep nginx` : 구동중인 nginx 확인
+- `sudo systemctl status nginx.service` : nginx 구동실패에 대한 대략적인 내용을 출력해줌
+- `sudo updatedb` : 새로운 파일들에 대해서 다시 새로고침해준다.(mlocate 관련)
+- `locate error | fgrep nginx` : 에러가 로그 파일을 찾는다.
+- `sudo cat /var/log/nginx/error.log` : 해당 로그파일을 읽는다.

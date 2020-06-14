@@ -34,3 +34,5 @@ taxonomy: aws
 [4. nginx 최신버전, 고정IP, systemctl, wget](/aws/08_IP_nginx)
 
 [5. mlocate, SFTP 설정](/aws/09_mlocate)
+
+[6. MariaDB 설정](/aws/10_MariaDB)
