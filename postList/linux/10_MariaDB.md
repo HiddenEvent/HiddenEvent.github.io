@@ -17,14 +17,6 @@ sidebar:
 
 💼📝🔑⏰ 📙📓📘📒🎓
 
-```
-관련성
-putty, filezila, editplus ====> 리눅스 안에 있는 ssh서버.(22)
-크롬, 파이어폭스, IE ======> nginx와 관련(80)
-sqlyog =========> 마리아DB와 관련 있음(3306)
-
-```
-
 # 💼 MariaDB 설치/삭제 과정
 **마리아 DB 삭제 시**
 - `sudo yum remove mariadb` : 마리아 DB삭제
@@ -88,15 +80,21 @@ character-set-server = utf8
 
 
 
+# 💼 그 밖에 정리한 내용
 ```
 브라우저 VS wget  둘의 차이점?
+  웹서버 입장에서 보면 둘다 client 이다.
+  - 브라우저 : 윈도우에서 들어오는 손님이다.
+  - wget : 리눅스에서 들어 오는 손님이다.
 
-웹서버 입장에서 보면 둘다 client 이다.
-- 브라우저 : 윈도우에서 들어오는 손님이다.
-- wget : 리눅스에서 들어 오는 손님이다.
+  같은 개념으로 
+  - SQLYog : 윈도우에서 온 손님
+  - MariaDB-client : 리눅스에서 들어오는 손님이다.
 
-같은 개념으로 
-- SQLYog : 윈도우에서 온 손님
-- MariaDB-client : 리눅스에서 들어오는 손님이다.
+
+관련성
+  putty, filezila, editplus ====> 리눅스 안에 있는 ssh서버.(22)
+  크롬, 파이어폭스, IE ======> nginx와 관련(80)
+  sqlyog =========> 마리아DB와 관련 있음(3306)
 
 ```
