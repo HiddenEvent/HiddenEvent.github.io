@@ -41,7 +41,7 @@ sqlyog =========> 마리아DB와 관련 있음(3306)
   gpgcheck=1
   ```
 - `sudo yum install MariaDB-server MariaDB-client -y` : 마리아 DB서버와 클라이언트 2개다 설치 명령어
--
+
 ## 📝 DB 인코딩 작업
 - `sudo vim /etc/my.cnf.d/server.cnf` : mySql 설정파일 편집하자!
 
@@ -64,13 +64,27 @@ character-set-server = utf8
 - `mysql -u root -p` : mysql 접속 명령어
   + 패스워드 입력하면 접속 완료
 
+## 📝 관리자 회원 만들기
+- `grant all privileges on *.* to richardkim@'%' identified by '비밀번호';` : 내부접속 계정 생성
+- `grant all privileges on *.* to richardkim@'localhost' identified by '비밀번호';` : 외부접속 계정 생성
 
 
+## 📝 sqlyog 세팅
+[SQLyog 다운로드 경로](https://github.com/webyog/sqlyog-community/wiki/Downloads)
+![설정화면](/assets/img/common/2020-06-18-01-00-36.png)
+
+## 📝 방화벽 및 포트포워딩 설정
+
+![포트포워딩 설정과정](/assets/img/common/2020-06-18-01-03-56.png)
+
+- 설정 후 내가 접속한 3307 포트를 통해서 SQLyog 접속을 하면 정상 접속이 된다.
 
 
-
-
-
+**만약 접속이 안된다면?**
+- `sudo vim /etc/my.cnf.d/server.cnf` : mySql 설정파일 편집하자!
+  + 포트를 적어두지 않았다면 기본포트 3306 포트가 연결된다는 뜻이다.
+  + 포트 변경 해야할 경우 [mysqld] 밑에 `PORT = 3307`을 추가해주면 된다.
+- `sudo netstat -nlp | fgrep mysql` : mysql 구동중인지 확인하는 명령어
 
 
 
