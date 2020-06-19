@@ -18,11 +18,11 @@ sidebar:
 💼📝🔑⏰ 📙📓📘📒🎓
 
 # 💼 MariaDB 설치/삭제 과정
-**마리아 DB 삭제 시**
+**⏰ 마리아 DB 삭제 시**
 - `sudo yum remove mariadb` : 마리아 DB삭제
 - `sudo rm -rf /var/lib/mysql` : 라이브러리 까지도 삭제 해주어야 깔끔하게 삭제된다.
 
-**마리아 DB 설치 시**
+**⏰ 마리아 DB 설치 시**
 - `sudo vim /etc/yum.repos.d/mariadb.repo` : 마리아 DB 다운받기 전 최신 버전 설정
   + 
   ```
@@ -37,7 +37,7 @@ sidebar:
 ## 📝 DB 인코딩 작업
 - `sudo vim /etc/my.cnf.d/server.cnf` : mySql 설정파일 편집하자!
 
-**아래 내용을 추가해 주어야한다.**
+**⏰ 아래 내용을 추가해 주어야한다.**
 ```
 [mysqld]
 collation-server = utf8_unicode_ci
@@ -72,7 +72,7 @@ character-set-server = utf8
 - 설정 후 내가 접속한 3307 포트를 통해서 SQLyog 접속을 하면 정상 접속이 된다.
 
 
-**만약 접속이 안된다면?**
+**⏰ 만약 접속이 안된다면?**
 - `sudo vim /etc/my.cnf.d/server.cnf` : mySql 설정파일 편집하자!
   + 포트를 적어두지 않았다면 기본포트 3306 포트가 연결된다는 뜻이다.
   + 포트 변경 해야할 경우 [mysqld] 밑에 `PORT = 3307`을 추가해주면 된다.

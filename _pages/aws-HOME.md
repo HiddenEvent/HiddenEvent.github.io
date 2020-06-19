@@ -36,3 +36,5 @@ taxonomy: aws
 [5. mlocate, SFTP 설정](/aws/09_mlocate)
 
 [6. MariaDB 설정](/aws/10_MariaDB)
+
+[7. 보안설정](/aws/11_security)
