@@ -94,20 +94,20 @@ sudo firewall-cmd --zone=public --list-ports
   + 아래 내용 추가/변경 후 저장
     ```  
     # 1. mysql 통신 설정 하는 경로 추가
-    MYSQLSocket /var/lib/mysql/mysql.sock
+    #    mysql 소켓 파일 확인 하는 방법
+    #    mysql이 돌아가고 있는 상태에서 `sudo updatedb` 명령 후
+    #    `sudo locate mysql | fgrep sock` 
 
-    # mysql 소켓 파일 확인 하는 방법
-    # mysql이 돌아가고 있는 상태에서 `sudo updatedb` 명령 후
-    # `sudo locate mysql | fgrep sock` 
+    MYSQLSocket /var/lib/mysql/mysql.sock
 
     # 2. pure-ftpd 에서 mysql 에 접속할 때 사용할 ID
     MYSQLUser pureftpd 
 
     # 3. pure-ftpd 에서 mysql 에 접속할 때 사용할 PW
-    MYSQLPassword sbs123414 
+    MYSQLPassword 비밀번호입력 
 
     # 4. ftp 사용자 정보 DB
-    MYSQLDatabase pureftpd가 사용할 DB접속 비번 
+    MYSQLDatabase pureftpd
 
     # 5. 비번은 평문으로 저장 하겠다.
     MYSQLCrypt cleartext 
@@ -133,3 +133,55 @@ sudo firewall-cmd --zone=public --list-ports
     -- 1. 데이터베이스 생성 확인
     SHOW DATABASES;
     ~~~
+
+### 🔑 mysql 권한 테이블 생성
+- `sudo vim /etc/passwd` : 리눅스에서 계정번호 확인
+  + 계정번호
+    ```
+    # richard의 계정번호는 1000 이라는 것을 알수 있음
+    richard:x:1000:1000::/home/richard:/bin/bash
+    ```
+- `sudo mysql -u pureftpd -p` :  MySql pureftp 계정 접속
+  + 1 테이블 생성/ 계정 insert해주는 작업
+    ~~~sql
+    -- 1. 데이터베이스 사용하겠다는 명령어
+    USE pureftpd;
+
+    -- 2.유저 테이블 생성
+    CREATE TABLE users (
+      uidx int(10) unsigned NOT NULL AUTO_INCREMENT,
+      `user` varchar(100) NOT NULL,
+      `password` varchar(100) NOT NULL,
+      `gid` int(10) unsigned NOT NULL,
+      `uid` int(10) unsigned NOT NULL,
+      `occurDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      `status` tinyint(1) unsigned NOT NULL DEFAULT '1',
+      `ipaccess` varchar(15) NOT NULL,
+      `comment` varchar(100) NOT NULL,
+      `ulBandWidth` smallint(5) unsigned NOT NULL,
+      `dlBandWidth` smallint(5) unsigned NOT NULL,
+      `quotaSize` smallint(5) unsigned NOT NULL,
+      `quotaFiles` int(10) unsigned NOT NULL,
+      `dir` varchar(100) NOT NULL,
+      PRIMARY KEY (`uidx`)
+    );
+
+    -- 3. 리눅스 계정별 폴더 접근 권한 설정을 위한 insert
+    insert  into `users`(`uidx`,`user`,`password`,`gid`,`uid`,`occurDate`,`status`,`ipaccess`,`comment`,`ulBandWidth`,`dlBandWidth`,`quotaSize`,`quotaFiles`,`dir`) 
+    values 
+    (1,'site1','비밀번호',1000,1000,NOW(),1,'*','',0,0,0,0,'/web/site1'),
+    (2,'site2','비밀번호',1000,1000,NOW(),1,'*','',0,0,0,0,'/web/site2'),
+    (3,'site3','비밀번호',1000,1000,NOW(),1,'*','',0,0,0,0,'/web/site3');
+    ~~~
+
+- `sudo systemctl status pure-ftpd` : ftp 상태 확인
+- `sudo systemctl start pure-ftpd` : ftp 시작
+- `sudo systemctl enable pure-ftpd` : ftp 항상 실행상태로 만들기(컴퓨터 껏다켜도..)
+- `sudo systemctl restart pure-ftpd` : ftp 재시작 
+
+
+## 📝 FTP 설치 및 적용 확인
+- `sudo yum install ftp` : ftp 설치
+- `sudo ftp 127.0.0.1` : ftp 접속 하는 명령어
+  + **Name : site1**  : mysql에 등록된 아이디
+  + **Password: 비밀번호** : mysql에 등록한 비밀번호 입력
