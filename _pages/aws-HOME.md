@@ -38,3 +38,5 @@ taxonomy: aws
 [6. MariaDB 설정](/aws/10_MariaDB)
 
 [7. 보안설정](/aws/11_security)
+
+[8. PURE_FTP 설정 및 사용자별 권한 설정](/aws/12_pure_ftp)
