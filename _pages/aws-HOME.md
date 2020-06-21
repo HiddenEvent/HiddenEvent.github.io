@@ -40,3 +40,5 @@ taxonomy: aws
 [7. 보안설정](/aws/11_security)
 
 [8. PURE_FTP 설정 및 사용자별 권한 설정](/aws/12_pure_ftp)
+
+[9. PHP 7.4, FPM 설치 및 NGINX 와 연동](/aws/13_php_FPM)
