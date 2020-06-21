@@ -95,3 +95,5 @@ sidebar:
 
     ```
 - `sudo systemctl restart nginx` : nginx 재시작, 설정 반영을 위해
+- `포트포워딩 하기` :8031,8032 포트 
+- `php가 반영이 안되는 부분 확인`
