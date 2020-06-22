@@ -41,7 +41,7 @@ sidebar:
 - `sudo vim /etc/nginx/conf.d/php_vhost.conf.include` : nginx랑 연동하는 스크립트 작성용 파일 생성
   + 스크립트 내용 추가
     ```
-    ndex index.php index.html index.htm;
+    index index.php index.html index.htm;
     root $documentRoot;
 
     location ~ \.php$ {
@@ -80,20 +80,29 @@ sidebar:
         }
     }
 
-    server {
-        listen 8033;
-        server_name _;
-
-        set $documentRoot /web/site3/public;
-
-        location / {
-            try_files $uri $uri/ /index.php?$args;
-        }
-
-        include /etc/nginx/conf.d/php_vhost.conf.include;
-    }
-
     ```
 - `sudo systemctl restart nginx` : nginx 재시작, 설정 반영을 위해
 - `포트포워딩 하기` :8031,8032 포트 
-- `php가 반영이 안되는 부분 확인`
+- .php 확장자 파일을 만들어서 작동 되는지 확인하기
+
+# 💼 PHP | MySql 연동 설정
+- 8031 server에 `mysqlConect.php` 파일을 생성하고 Connection 설정하기
+    + 설정 관련 코드
+      ~~~php
+      <?php
+      mysqli_connect("127.0.0.1", "site1", "비밀번호", "site1") or die('DB CONNECTION ERROR');
+      ~~~
+- __DB CONNECTION ERROR__ 발생 시 mysql 접속하여 확인
+    + `sudo mysql -u root -p`: mysql 접속
+    + 계정있는지 확인
+      ~~~sql
+      select user from mysql.user;
+      ~~~
+    + 계정생성
+      ~~~sql
+      grant all privileges on site1.* to site1@`%` identified by '비번';
+      grant all privileges on site2.* to site2@`%` identified by '비번';
+      create database site1;
+      create database site2;
+      ~~~
+- 이상 mysql 연동도 끝나게 된다 와우!!
