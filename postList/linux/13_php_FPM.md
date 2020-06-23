@@ -1,5 +1,5 @@
 ---
-title: "(linux) PHP 7.4, FPM 설치 및 NGINX 와 연동"
+title: "(linux) 9. PHP 7.4, FPM 설치 및 NGINX 와 연동"
 permalink: aws/13_php_FPM
 toc_label: "<a href='/aws/'>서버 홈 이동 Click</a>"
 layout: single
@@ -34,7 +34,6 @@ sidebar:
 
 
 # 💼 PHP | nginx 연동설정
-<!-- - `sudo systemctl php-fpm` : PHP - nginx 연동설정 명령어 -->
 - `sudo systemctl enable php-fpm` : php 항상키는 명령어
 - `sudo systemctl restart php-fpm` : php 다시시작(설정변경시에도 자주 쓰임)
 - `sudo vim /etc/php.ini` : php 설정파일 열기
