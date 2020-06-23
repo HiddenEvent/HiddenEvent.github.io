@@ -30,7 +30,7 @@ sidebar:
 - `sudo yum -y install yum-utils`
 - `sudo yum-config-manager --enable remi-php74`
 - `sudo yum install php php-common php-devel php-mysqlnd php-fpm php-opcache php-gd php-mbstring php-cli php-zip php-mcrypt php-curl php-xml php-pear php-bcmath php-json`
-- `php -v` : php7.2 설치 확인하는 명령어
+- `php -v` : php7.4 설치 확인하는 명령어
 
 
 # 💼 PHP | nginx 연동설정
@@ -106,3 +106,97 @@ sidebar:
       create database site2;
       ~~~
 - 이상 mysql 연동도 끝나게 된다 와우!!
+
+# 💼 웹호스팅 실습
+**php를 사용하여 실제 웹서비스를 구축해보자**
+
+## 📝 게시물 테이블 생성
+- site1에 게시물 테이블 생성 작업
+  ~~~sql
+  CREATE TABLE ARTICLE (
+    ID INT (10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY(ID),
+    REG_DATE DATETIME NOT NULL,
+    TITLE VARCHAR(100) NOT NULL,
+    `BODY` TEXT NOT NULL
+  );
+
+  INSERT INTO ARTICLE
+  SET REG_DATE = NOW(),
+  TITLE = '제목입니다.',
+  `BODY` = '내용입니다.';
+
+  INSERT INTO ARTICLE
+  SET REG_DATE = NOW(),
+  TITLE = '제목입니다.02',
+  `BODY` = '내용입니다.02';
+
+  INSERT INTO ARTICLE
+  SET REG_DATE = NOW(),
+  TITLE = '제목입니다.03',
+  `BODY` = '내용입니다.03';
+
+  SELECT * FROM ARTICLE;
+  ~~~
+
+## 📝 editPlus로 php 페이지 만들기
+**에디트 플러스로 site1의 페이지를 만들어 보자**
+- index.php 생성 후 아래 코드 추가
+  ~~~php
+  <?php
+  // 1. DB 접속
+  $db_conn = mysqli_connect("127.0.0.1", "site1", "richard2020!@", "site1") or die("DB CONNECTION ERROR");
+
+  // 2. 쿼리 실행
+  $sql = "
+  SELECT * 
+  FROM ARTICLE
+  ORDER BY ID DESC
+  ";
+  $rs = mysqli_query($db_conn, $sql);
+  //var_dump($rs);
+
+  // 3. DB에서 조회된 결과값을  1ROW 씩 꺼내오는 작업
+  $rows = [];
+  while ( $row = mysqli_fetch_assoc($rs) ) {
+    $rows[] = $row;
+  }
+  ?>
+
+  <!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>게시물 리스트</title>
+  </head>
+  <body>
+    <h1>게시물 리스트</h1>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>날짜</th>
+          <th>제목</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ( $rows as $row ) { ?>
+
+        <tr>
+          <td><?=$row["ID"]?></td>
+          <td><?=$row['REG_DATE']?></td>
+          <td><?=$row['TITLE']?></td>
+          <td><?=$row['BODY']?></td>
+        </tr>
+
+        <?php } ?>
+      </tbody>
+    </table>
+  </body>
+  </html>
+  ~~~
+
+- `sudo vim /etc/php.ini`: php 설정 파일 열기
+  + `display_errors = Off` => `On` 으로 바꿔줘야 php 오류를 출력한다.
+- `sudo systemctl restart php-fpm` : 설정 변경 후 재시작
