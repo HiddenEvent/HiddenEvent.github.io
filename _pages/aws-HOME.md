@@ -44,3 +44,5 @@ taxonomy: aws
 [9. PHP 7.4, FPM 설치 및 NGINX 와 연동](/aws/13_php_FPM)
 
 [10. 배운내용 정리 및 Mysql 권한관리](/aws/14_webService)
+
+[11. 자바, 이클립스, 서블릿, MySQL 개발환경 세팅, 1부 ](/aws/15_webSetting01)
