@@ -340,6 +340,10 @@ collections:
     output: true
     permalink: /algorithm/:collection/:title
 
+  # project_manager
+  github:
+    output: true
+    permalink: /project_management/:collection/:title
 
 # Defaults
 defaults:
@@ -580,4 +584,18 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "algorithm"
-        
+   # _project_manager/_github
+  - scope:
+      path: ""
+      type: github
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "project_management"

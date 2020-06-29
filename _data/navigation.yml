@@ -10,10 +10,8 @@ main:
   - title: "Algorithm"
     url: "/algorithm/"
     description: "알고리즘 공부"
-  # - title: "Web"
-  #   url: /web/
-  # - title: "Blog"
-  #   url: /blog/
+  - title: "프로젝트 관리"
+    url: /project_management/
 
 # side navigation links
 aws :
@@ -48,3 +46,6 @@ database :
     url: "/oracle/"
   - title : "Sqlp"
     url: "/sqlp/"
+project_management :
+  - title : "Github"
+    url: "/github/"
