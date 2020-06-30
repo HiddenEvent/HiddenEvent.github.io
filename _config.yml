@@ -120,7 +120,7 @@ author:
       url: mailto:hiddeneventor@gmail.com
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://devinlife.com"
+      # url: "https://devinlife.com"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"

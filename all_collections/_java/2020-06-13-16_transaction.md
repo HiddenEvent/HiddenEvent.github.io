@@ -1,6 +1,6 @@
 ---
-title: (spring) JPA (Java Persistence API)
-excerpt: "자바 객체와 데이터베이스 테이블 간의 매핑을 처리하는 ORM 기술 표준"
+title: (spring) Transaction
+excerpt: "트랜젝션 관련 내용 정리"
 categories:
   - Spring 
 tags:
