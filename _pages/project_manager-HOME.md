@@ -12,6 +12,9 @@ sidebar:
 # 사용자 글로벌 설정
 $ git config --global user.name "RichardKim"
 $ git config --global user.email hiddeneventor@gmail.com
+# p4Merge 구글에 검색하여 다운로드
+$ git config --global merge.tool p4mergetool
+  - gitBash에 설정 작업을 해야 Git과 연동 된다. 
 
 # 깃허브 클론 받기
 $ git clone 
