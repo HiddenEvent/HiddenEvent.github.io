@@ -7,9 +7,9 @@ main:
   - title: "Database"
     url: "/database/"
     description: "데이터베이스 관련"
-  - title: "Algorithm"
+  - title: "이론"
     url: "/algorithm/"
-    description: "알고리즘 공부"
+    description: "컴퓨터 전공 이론 정리"
   - title: "프로젝트 관리"
     url: /project_management/
 
@@ -41,6 +41,10 @@ algorithm:
     url: /al_kotlin/
   - title: "수학"
     url: /math/
+  - title: "컴퓨터그래픽스"
+    url: /graphics/
+  - title: "인공지능"
+    url: /AI/
 database :
   - title : "Oracle"
     url: "/oracle/"

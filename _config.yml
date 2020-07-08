@@ -339,7 +339,12 @@ collections:
   math:
     output: true
     permalink: /algorithm/:collection/:title
-
+  graphics:
+    output: true
+    permalink: /algorithm/:collection/:title
+  AI:
+    output: true
+    permalink: /algorithm/:collection/:title
   # project_manager
   github:
     output: true
@@ -569,6 +574,36 @@ defaults:
       sidebar:
         nav: "algorithm"
 
+     # _algorithm/graphics
+  - scope:
+      path: ""
+      type: graphics 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "algorithm"
+     # _algorithm/AI
+  - scope:
+      path: ""
+      type: AI 
+    values:
+      layout: single
+      comments: true
+      read_time: true
+      share: true
+      related: true
+      toc: true
+      toc_ads: true
+      toc_sticky: true
+      sidebar:
+        nav: "algorithm"
      # _algorithm/math
   - scope:
       path: ""
@@ -584,6 +619,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "algorithm"
+
    # _project_manager/_github
   - scope:
       path: ""
