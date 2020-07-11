@@ -604,6 +604,7 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: "algorithm"
+        
      # _algorithm/math
   - scope:
       path: ""
