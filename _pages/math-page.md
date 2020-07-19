@@ -1,5 +1,5 @@
 ---
-title: "수학"
+title: "독학사 정리"
 layout: collection
 permalink: algorithm/math/
 collection: math
@@ -8,4 +8,4 @@ sidebar:
   nav: "algorithm"
 ---
 
-## 수학 홈입니다.
+## 독학사 문제 정리입니다.
