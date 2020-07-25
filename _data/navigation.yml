@@ -39,7 +39,7 @@ language :
 algorithm:
   - title: "파이썬 알고리즘 풀기"
     url: /al_kotlin/
-  - title: "수학"
+  - title: "독학사"
     url: /math/
   - title: "컴퓨터그래픽스"
     url: /graphics/
