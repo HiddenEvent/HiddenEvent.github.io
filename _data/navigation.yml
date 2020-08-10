@@ -41,10 +41,10 @@ algorithm:
     url: /al_kotlin/
   - title: "독학사"
     url: /math/
-  - title: "컴퓨터그래픽스"
-    url: /graphics/
   - title: "인공지능"
     url: /AI/
+  - title: "자격증 공부"
+    url: /Certificate/
 database :
   - title : "Oracle"
     url: "/oracle/"

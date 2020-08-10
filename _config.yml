@@ -339,7 +339,7 @@ collections:
   math:
     output: true
     permalink: /algorithm/:collection/:title
-  graphics:
+  Certificate:
     output: true
     permalink: /algorithm/:collection/:title
   AI:
@@ -574,10 +574,10 @@ defaults:
       sidebar:
         nav: "algorithm"
 
-     # _algorithm/graphics
+     # _algorithm/Certificate
   - scope:
       path: ""
-      type: graphics 
+      type: Certificate 
     values:
       layout: single
       comments: true
