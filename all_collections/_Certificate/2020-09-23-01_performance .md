@@ -39,7 +39,13 @@ last_modified_at: 2020-08-15
 - (/) 슬래쉬 표기법을 이용한다. ex) 190.87.140.205/29
 - /29 가 의미하는 것은 preFix 나머지 3비트는 subFix 주소이다.
 - 주소의 갯수는 subFix에 해당하는 2^3 = 8 개이다.
-- 마지막으로 주소계산을 하기위해 AND 연산을 해주면 된다.
+- 시작 주소 계산 : 기존 주소와 넷마스크 주소를 AND 연산을 하면 블록의 주소가 나온다.
+- 마지막 주소 계산 : 넷마스크 주소를 not 연산 한 결과를 기존 주소와 or 연산을 해준다.
+
+
+## 📝IPV4 vs IPV6 차이
+IPV4 : 유니캐스트, 멀티캐스트, 브로드캐스트
+IPV6 : 유니캐스트, 멀티캐스트, 애니캐스트
 
 
 # 💼 IDS(침입탐지시스템) 문제
@@ -54,3 +60,68 @@ last_modified_at: 2020-08-15
 ## 📝 이상탐지 기법
 - 통계적 패턴을 분석하여 통계적 패턴과 일치하지 않을 경우 침입으로 간주하는 개념
 - 오탐율이 높다
+
+# 💼 리눅스 명령어
+- 
+
+
+# 💼 프로토콜 문제
+- TCP = FTP(20,21),SMTP(25),TELNET(23)
+- UDP = TFTP(69~70),DHCP(67~68),BOOTP,SNMP(161)
+- 둘다 사용 = DNS(53)
+
+# 💼 OSI 7계층 문제
+물리 계층 - 리피터, 허브
+데이터링크 계층 - 브릿지
+네트워크 계층 - 라우터
+이외에 상위계층 - 게이트웨이
+
+# 💼 라우터 문제
+## 📝 확인 문제
+인터페이스 정보를 확인해라 : en - sh int - copy r s
+접속한 사용자를 확인해라 : en - sh user - copy r s
+라우팅 테이블을 확인해라 : en - `sh ip route` - copy r s
+플래쉬를 확인해라 : en - show flash - copy r s
+버전 및 부팅정보 등 : en - show version
+
+## 📝 설정문제
+### 🔑 주석 설정
+en - conf t - int e 0 - description ICQA
+
+### 🔑 클럭속도 설정 (56K로 설정하고), NVRAM에 저장하시오
+en - conf t - int S2/0 - clock rate 56000
+
+### 🔑 대역폭 설정 (2048로 설정하라), NVRAM에 저장하시오
+en - conf t - int S3/0 - bandwidth 2048
+
+### 🔑 Secondary 와 IP 설정
+en - conf t - int F0/0
+`ip add 192.168.2.1 255.255.255.252`
+`ip add 192.168.2.1 255.255.255.252 se`
+
+### 🔑 default-gateway 설정
+en - conf t - ip default-gateway 192.168.0.10 
+
+
+### 🔑 Telnet/AUX/console Port 설정에 접근하는 설정
+`console 설정`
+en - conf t - line console 0 - password NETPass - login 
+
+`AUX 설정`
+en - conf t - line aux 0 - password NETPass - login
+
+### 🔑 Telnet 5분50초 동안 신호 없을 시 해당 세션을 자동종료 설정
+en - conf t - line vty 0 4 - `exec-timeout 05 50`
+
+### 🔑 Interface FestEthernet0/0을 활성화 시키고 저장
+en - conf t - int F0/0 - no shutdown - 저장
+
+### 🔑 dhcp 설정 네임을 icqa로 설정후 네트워크 설정
+en - conf t - ip dhcp pool icqa - network 192.x.x.x 255.255.255.0
+
+### 🔑 OSPF 설정
+en - conf t - router ospf 1 - network x.x.x.0 0.0.0.255 area 1
+en - conf t - router ospf 1 - network x.x.x.0 0.0.0.255 area 1
+
+### 🔑 acess list 문제
+en - conf t - int f0/0 - ip access-group 1 in - ip access-group 1 out
