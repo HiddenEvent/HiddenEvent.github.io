@@ -107,7 +107,7 @@ en - conf t - ip default-gateway 192.168.0.10
 `console 설정`
 en - conf t - line console 0 - password NETPass - login 
 
-`AUX 설정`
+`AUX 설정`Q
 en - conf t - line aux 0 - password NETPass - login
 
 ### 🔑 Telnet 5분50초 동안 신호 없을 시 해당 세션을 자동종료 설정
