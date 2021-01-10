@@ -80,8 +80,23 @@ groupmod -n newgroup mygroup
 
 `9) gpasswd : 그룹의 암호를 설정하거나, 그룹의 관리를 수행`
 gpasswd newgroup
+
+`유저 보기`
+
 ~~~
 
+## 포트 관련 명령어
+~~~php
+`포트상태 확인`
+netstat -tnl
+
+`포트 확인`
+iptables -t nat -L
+
+`iptable 상태 확인`
+
+~~~
+-
 
 ## 파일과 디렉터리의 소유와 허가권
 - 파일 허가권(Permission)
@@ -93,11 +108,27 @@ gpasswd newgroup
   + chmod ugo+rwx  : u 유저 g 그룹 o 그외 의 심볼릭 방식으로 사용가능
 
 
+## mlocatie 명령어
+-  mlocate 설치 및 사용방법 숙지
+```php
+sudo yum install mlocate
+//초고속 파일 검색 명령어 mlocate 설치
+sudo updatedb
+//mlocate가 빠른 검색을 하려면 DB를 구축해야 합니다.
+//updatedb 명령어는 새벽 4시 정도에 매일 한번씩 자동으로 실행됩니다.
+//위와 같이 수동으로 실행해 줄 수 도 있습니다.
+sudo locate nginx
+//nginx 라는 이름을 가진 파일 전부 리스팅
+sudo locate html | fgrep dns
+//nginx 라는 이름을 가진 파일 전부 리스팅 후 거기서 또 dns 라는 이름을 가진 라인만 추리기
+```
+
+
+
 ## 명령어 모아보기
 ~~~php
 ls : 파일 리스트 출력
 ls -l : 파일 리스트 출력(좀더 자세한 정보)
-
 ls -al : 파일 리스트 출력(좀더 자세한 정보 + 숨김파일까지 표시)
 clear : 화면 지우기
 pwd : 현재 위치 표시
