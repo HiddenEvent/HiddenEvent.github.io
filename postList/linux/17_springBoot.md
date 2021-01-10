@@ -17,93 +17,55 @@ sidebar:
 
 💼📝🔑⏰ 📙📓📘📒🎓
 
-# 1. 최초 유저 설정
-~~~php
-`1) useradd : 새로운 사용자 추가` 
-useradd newuser
-`관리자의 경우 sudous설정`
-vi /etc/sudoers
-
-// 루트 외부접속 막기
-sudo vim /etc/ssh/sshd_config
-`
-PermitRootLogin no
-`
-`추가된 설정 적용`
-sudo systemctl restart sshd
-
-
-
-`유저 보기`
-cat /etc/passwd
-`userdel : 사용자를 삭제`
-userdel newuser
-~~~
-
-# 2. nginx 설치 및 설정
+# 💼 프로젝트 패키지 war설정 하고 빌드
 ```php
-//들어갈 내용
-sudo vim /etc/yum.repos.d/nginx.repo
-`
-[nginx-stable]
-name=nginx stable repo
-baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
-gpgcheck=1
-enabled=1
-gpgkey=https://nginx.org/keys/nginx_signing.key
-module_hotfixes=true
-`
-//명령어
-sudo yum install nginx -y
-
-// nginx 실행
-sudo systemctl start nginx
-sudo systemctl enable nginx
-
-// 포트설정
-sudo vim /etc/nginx/conf.d/vhost.conf
-
+// 자바 설치
+sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
 ```
+# 💼 리눅스 배포후 실행
+```php
+//tomcat
+// 배포 후 실행하기
+java -jar -Dspring.profiles.active=production 빌드파일명.jar
+// 백그라운로 실행
+nohup java -jar -Dspring.profiles.active=production 빌드파일명.jar > /dev/null 2>&1 &
 
-# 💼 방화벽 설정하기
-```
-sudo systemctl enable firewalld
 
-sudo systemctl start firewalld
+// 종료하기
+sudo netstat -nlp | grep java
+sudo kill -9 프로세스번호
 
-기본 존 확인
-sudo firewall-cmd --get-default-zone
 
-기본 존에 21 포트 추가
-sudo firewall-cmd --permanent --add-port=21/tcp
-
-기본 존에 22 포트 추가
-sudo firewall-cmd --permanent --add-port=22/tcp
-
-기본 존에 8011 포트 추가
-sudo firewall-cmd --permanent --add-port=8011/tcp
-
-기본 존에 8012 포트 추가
-sudo firewall-cmd --permanent --add-port=8012/tcp
-
-기본 존에 8013 포트 추가
-sudo firewall-cmd --permanent --add-port=8013/tcp
-
-기본 존에 3306 포트 추가
-sudo firewall-cmd --permanent --add-port=3306/tcp
-
-기본 존에 77 포트 추가
-sudo firewall-cmd --permanent --add-port=77/tcp
-
-기본 존에 77 포트 제거
-sudo firewall-cmd --permanent --remove-port=77/tcp
-
-기본 존에 설정된 내용을 방화벽에 적용
+// 실서버 포트번호 확인후 방화벽 열어주기
+sudo firewall-cmd --permanent --add-port=포트번호/tcp
 sudo firewall-cmd --reload
 
-열려있는 포트 확인
-sudo firewall-cmd --zone=public --list-ports
+```
+# 💼 nginx => tocat 스프링 포트포워딩
+```php
+//아래 설정파일에서 추가
+sudo vim /etc/nginx/conf.d/vhost.conf
+`
+server {
+  listen 엔진엑스포트; 
+  server_name 도메인;
+  location / {
+      proxy_connect_timeout 7d;
+      proxy_send_timeout 7d;
+      proxy_read_timeout 7d;
+      proxy_pass http://127.0.0.1:스프링포트/;
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header Host $host;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      # WebSocket support (nginx 1.4)
+      proxy_http_version 1.1;
+  }
+}
+`
 
+
+// nginx 재실행
+sudo systemctl restart nginx
 ```
 
 # 4. 폴더 생성및 권한 설정
@@ -115,6 +77,37 @@ mkdir -p /web/sit2
 sudo chown richardkim:richardkim -R .
 ```
 
+# 💼 도메인구매
+- oa.gg 같은 2자리수 도메인을 구매하자
+- DNS설정으로 들어가서 호스트는 www, @ 등등 등록 하고 실서버 ip값을 넣주면 끝...
+- 포트 포워딩 설정 
+  ```php
+  sudo vim /etc/nginx/conf.d/vhost.conf
+  `
+  server {
+      listen 80;
+      server_name 도매인;
+      location / {
+          proxy_connect_timeout 7d;
+          proxy_send_timeout 7d;
+          proxy_read_timeout 7d;
+          proxy_pass http://127.0.0.1:포트번호/;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header Host $host;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          # WebSocket support (nginx 1.4)
+          proxy_http_version 1.1;
+      }
+  }
+  `
+  ```
+# 💼 SSL설정
+- certbot.eff.org 에서 스팩선택후 그대로 따라가면 설정 끝..
+- `sudo certbot --nginx`
+- `sudo vim /etc/nginx/conf.d/vhost.conf` 에서 확인하면 코드가 변경되어있다..
+- `sudo systemctl restart nginx` 설정변경 후 재시작
+- `sudo certbot renew --dry-run` 3개월마다 자동으로 재인증해주는 명령어
+
 
 # 💼 관련 명령어
 ```php
@@ -122,7 +115,6 @@ sudo chown richardkim:richardkim -R .
 netstat -nlp
 `서비스 확인`
 systemctl list-units --type=service
-
 ```
 
 # 아파치 중지..
@@ -131,6 +123,7 @@ systemctl list-units --type=service
 systemctl stop httpd
 //apache start
 systemctl start httpd
+systemctl disable httpd
 
 ```
 # nginx 에러
